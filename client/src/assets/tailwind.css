@@ -1,0 +1,42 @@
+@font-face {
+    font-family: Tahoma;
+    src: url("Tahoma_Regular.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg: #1a1d23;
+    --title: #d3bc8e;
+}
+
+html {
+    background: var(--bg) url("/images/other/astralExpress.png") no-repeat;
+    background-size: 150%;
+    background-position: top right;
+    font-family: 'Tahoma', helvetica, sans-serif;
+    overflow-x: hidden;
+    color: white;
+    cursor: url("/images/other/cursor.png") 4 2, auto;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+.split {
+    background: url("/images/other/splitLeft.png") no-repeat 0/20px,url("/images/other/splitRight.png") no-repeat 100%/20px;
+    width: 100%;
+    height: 9px;
+    margin: 8px 0 20px;
+}
+.splitLine {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    top: 4px;
+    width: 100%;
+    height: 1px;
+}
