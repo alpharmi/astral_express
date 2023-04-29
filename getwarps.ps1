@@ -1,3 +1,5 @@
+Add-Type -AssemblyName System.Web
+
 #Find Game
 Write-Output "Finding game..."
 
