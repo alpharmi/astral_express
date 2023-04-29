@@ -1,4 +1,6 @@
+#Edited version of starrailstation.com's method
 Add-Type -AssemblyName System.Web
+$ProgressPreference = 'SilentlyContinue'
 
 #Find Game
 Write-Output "Finding game..."
