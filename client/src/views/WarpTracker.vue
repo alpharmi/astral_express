@@ -17,6 +17,14 @@
         </div>
 </template>
 
+<script>
+    export default {
+        mounted: function() {
+            
+        }
+    }
+</script>
+
 <script setup>
     import Split from "../components/Split.vue"
 </script>
