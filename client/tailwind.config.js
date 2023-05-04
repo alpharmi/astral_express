@@ -3,8 +3,8 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      "calcBp1": [{"min": "1386px", "max": "1768px"}, {"max": "1096px"}],
-      "calcBp2": {"max": "1385px"}
+      "calcBp1": [{"min": "1419px", "max": "1781px"}, {"max": "1096px"}],
+      "calcBp2": {"max": "1418px"}
     },
     extend: {
       colors: {
