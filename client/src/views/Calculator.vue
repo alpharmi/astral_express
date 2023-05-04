@@ -100,6 +100,9 @@
                 if (this.days_until_pull > 0) {
                     this.training_jades = 60 * this.days_until_pull
                     this.hertas_jades = 105 * (1 + Math.floor(this.days_until_pull / 7))
+                } else {
+                    this.training_jades = 0
+                    this.hertas_jades = 0
                 }
 
                 if (this.express_supply_pass) {
