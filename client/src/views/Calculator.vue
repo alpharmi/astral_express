@@ -6,7 +6,7 @@
         </div>
     </div>
     <Split/>
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 calcBp2:grid-cols-1 gap-5">
         <div class="flex flex-col gap-10">
             <div class="flex flex-row flex-wrap content-start gap-2 flex-grow">
                 <Input value="star_rail_pass"/>
@@ -45,7 +45,7 @@
                     <p>+ <span class="text-title">{{ star_4_refund_passes }}x</span> 4 Star Refund</p>
                 </div>
             </div>
-            <div class="flex flex-row w-full gap-10 justify-between">
+            <div class="flex flex-row calcBp1:flex-col calcBp1:gap-5 w-full gap-10 justify-between">
                 <div>
                     <p class="flex flex-row">Soft Pity: <span class="text-title">{{ soft_pity }}</span>
                         <Tooltip v-if="banner_type" 
