@@ -6,16 +6,16 @@
         </div>
     </div>
     <Split/>
-    <div class="grid grid-cols-2 calcBp2:grid-cols-1 gap-5">
+    <div class="grid grid-cols-2 md:flex md:gap-10 flex-wrap gap-5">
         <div class="flex flex-col gap-10">
-            <div class="flex flex-row flex-wrap content-start gap-2 flex-grow">
+            <div class="flex flex-row flex-wrap content-start gap-2">
                 <Input value="star_rail_pass"/>
                 <Input value="stellar_jade"/>
                 <Input value="oneiric_shard"/>
                 <Input value="undying_embers"/>
                 <Input value="undying_starlight"/>
             </div>
-            <div class="flex flex-row flex-wrap content-start gap-2 flex-grow">
+            <div class="flex flex-row flex-wrap content-start gap-2">
                 <Input value="current_pity"/>
                 <Input value="days_until_pull"/>
                 <Toggle value="express_supply_pass"/>
@@ -23,29 +23,31 @@
                 <Switch value="refund_4_stars" toggled="true"/>
             </div>
         </div>
-        <div class="container h-auto flex flex-wrap justify-between px-10 p-5 gap-5">
-            <div>
-                <p class="text-xl"><span class="text-title">{{ total_jades }}x</span> Stellar Jade</p>
-                <div class="pl-5">
-                    <p>+ <span class="text-title">{{ stellar_jade }}x</span> Owned</p>
-                    <p>+ <span class="text-title">{{ oneiric_shard }}x</span> Oneiric Shard</p>
-                    <p>+ <span class="text-title">{{ training_jades }}x</span> Daily Training</p>
-                    <p>+ <span class="text-title">{{ hertas_jades }}x</span> Herta's Simulated Universe</p>
-                    <p>+ <span class="text-title">{{ express_jades }}x</span> Express Supply Pass</p>
+        <div class="flex flex-wrap gap-10">
+            <div class="container h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
+                <div>
+                    <p class="text-xl"><span class="text-title">{{ total_jades }}x</span> Stellar Jade</p>
+                    <div class="pl-5">
+                        <p>+ <span class="text-title">{{ stellar_jade }}x</span> Owned</p>
+                        <p>+ <span class="text-title">{{ oneiric_shard }}x</span> Oneiric Shard</p>
+                        <p>+ <span class="text-title">{{ training_jades }}x</span> Daily Training</p>
+                        <p>+ <span class="text-title">{{ hertas_jades }}x</span> Herta's Simulated Universe</p>
+                        <p>+ <span class="text-title">{{ express_jades }}x</span> Express Supply Pass</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xl"><span class="text-title">{{ total_star_rail_passes }}x</span> Star Rail Pass</p>
+                    <div class="pl-5">
+                        <p>+ <span class="text-title">{{ star_rail_pass }}x</span> Owned</p>
+                        <p>+ <span class="text-title">{{ current_pity }}x</span> Previous Warps</p>
+                        <p>+ <span class="text-title">{{ jade_passes }}x</span> Stellar Jade Exchange</p>
+                        <p>+ <span class="text-title">{{ undying_embers_passes }}x</span> Undying Embers Exchange</p>
+                        <p>+ <span class="text-title">{{ undying_starlight_passes }}x</span> Undying Starlight Exchange</p>
+                        <p>+ <span class="text-title">{{ star_4_refund_passes }}x</span> 4 Star Refund</p>
+                    </div>
                 </div>
             </div>
-            <div>
-                <p class="text-xl"><span class="text-title">{{ total_star_rail_passes }}x</span> Star Rail Pass</p>
-                <div class="pl-5">
-                    <p>+ <span class="text-title">{{ star_rail_pass }}x</span> Owned</p>
-                    <p>+ <span class="text-title">{{ current_pity }}x</span> Previous Warps</p>
-                    <p>+ <span class="text-title">{{ jade_passes }}x</span> Stellar Jade Exchange</p>
-                    <p>+ <span class="text-title">{{ undying_embers_passes }}x</span> Undying Embers Exchange</p>
-                    <p>+ <span class="text-title">{{ undying_starlight_passes }}x</span> Undying Starlight Exchange</p>
-                    <p>+ <span class="text-title">{{ star_4_refund_passes }}x</span> 4 Star Refund</p>
-                </div>
-            </div>
-            <div class="flex flex-row calcBp1:flex-col calcBp1:gap-5 w-full gap-10 justify-between">
+            <div class="container h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
                 <div>
                     <p class="flex flex-row">Soft Pity: <span class="text-title">{{ soft_pity }}</span>
                         <Tooltip v-if="banner_type" 
