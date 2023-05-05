@@ -1,1 +1,1 @@
-deployed to: astral-express.vercel.app
+deployed to: https://astral-express.vercel.app
