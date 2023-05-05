@@ -53,7 +53,7 @@
                                 <tr v-for="warp in warps" :class="'warp-' + warp[4]" class="border-t border-gray-900 child:font-normal child:py-2">
                                     <th class="w-[12.5rem] pl-5 text-sm font-mono">{{ timeToDay(warp[3]) }}</th>
                                     <th class="text-center">74</th>
-                                    <th class="pr-10 inline-image gap-3"><img class="scale-[2]" :class="{ 'scale-[1.5]': warp[2] == 'light_cone' }" :src="`/images/items/${warp[2]}/${warp[1].toLowerCase().replaceAll(' ', '_')}.webp`"/>{{ warp[1] }}</th>
+                                    <th class="pr-10 inline-image gap-3"><img :class="[{'scale-[1.5]': warp[2] == 'light_cone'}, {'scale-[2]': warp[2] == 'character'}]" :src="`/images/items/${warp[2]}/${warp[1].toLowerCase().replaceAll(' ', '_')}.webp`"/>{{ warp[1] }}</th>
                                 </tr>
                             </table>
                         </div>
