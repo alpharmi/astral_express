@@ -2,7 +2,7 @@
     <div class="flex flex-row flex-wrap w-full px-20 gap-5 place-content-center child:max-w-md">
         <div class="flex flex-col">
             <div class="bgcontainer p-4 flex-col bg-bg-dark-80 gap-3">
-                <h1 class="font-bold">Welcome to astral express</h1>
+                <h1 class="font-bold text-title">Welcome to astral express</h1>
                 <p>
                     Multipurpose tool that currently includes to help with
                     your Honkai Adventures. Currently includes warp history, 

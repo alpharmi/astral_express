@@ -4,6 +4,7 @@
             <h1 class="text-4xl pb-2 text-title font-bold">Calculator</h1>
             <p>Calculate how many Stellar Jades are required for <br> your next 4/5 star pulls.</p>
         </div>
+        <button @click="redirect('/warp/import')" class="button p-3 px-20 font-bold text-xl">Import</button>
     </div>
     <Split/>
     <div class="grid grid-cols-2 md:flex md:gap-10 flex-wrap gap-5">
@@ -24,7 +25,7 @@
             </div>
         </div>
         <div class="flex flex-wrap gap-10">
-            <div class="bgcontainer h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
+            <div class="bgcontainer w-full h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
                 <div>
                     <p class="text-xl"><span class="text-title">{{ total_jades }}x</span> Stellar Jade</p>
                     <div class="pl-5">
@@ -47,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bgcontainer h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
+            <div class="bgcontainer w-full h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
                 <div>
                     <p class="flex flex-row">Soft Pity: <span class="text-title">{{ soft_pity }}</span>
                         <Tooltip v-if="banner_type" 
@@ -79,6 +80,16 @@
     import Input from "../components/Calculator/Input.vue"
     import Toggle from "../components/Calculator/Toggle.vue"
     import Switch from "../components/Calculator/Switch.vue"
+
+    import * as vueRouter from "vue-router"
+
+    const router = vueRouter.useRouter()
+
+    function redirect(route) {
+        router.push({
+            path: route,
+        })
+    }
 </script>
 
 <script>
