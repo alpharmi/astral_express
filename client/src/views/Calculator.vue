@@ -79,16 +79,6 @@
     import Input from "../components/Calculator/Input.vue"
     import Toggle from "../components/Calculator/Toggle.vue"
     import Switch from "../components/Calculator/Switch.vue"
-
-    import * as vueRouter from "vue-router"
-
-    const router = vueRouter.useRouter()
-
-    function redirect(route) {
-        router.push({
-            path: route,
-        })
-    }
 </script>
 
 <script>

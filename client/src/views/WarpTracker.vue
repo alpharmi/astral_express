@@ -106,4 +106,14 @@
 
 <script setup>
     import Split from "../components/Split.vue"
+
+    import * as vueRouter from "vue-router"
+
+    const router = vueRouter.useRouter()
+
+    function redirect(route) {
+        router.push({
+            path: route,
+        })
+    }
 </script>
