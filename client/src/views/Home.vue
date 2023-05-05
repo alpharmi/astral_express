@@ -1,5 +1,6 @@
 <template>
-    <p>test</p>
+    <p class="link" @click="redirect('calculator')">test link calculator</p>
+    <p class="link" @click="redirect('warp')">test link warp</p>
 </template>
 
 <script setup>
