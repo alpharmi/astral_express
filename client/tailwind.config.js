@@ -10,7 +10,10 @@ module.exports = {
       colors: {
         "bg": "var(--bg)",
         "container": "var(--container)",
-        "title": "var(--title)"
+        "title": "var(--title)",
+        "description": "var(--description)",
+        "legendary": "var(--legendary)",
+        "rare": "var(--rare)"
       }
     },
   },

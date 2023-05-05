@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="flex flex-wrap gap-10">
-            <div class="container h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
+            <div class="bgcontainer h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
                 <div>
                     <p class="text-xl"><span class="text-title">{{ total_jades }}x</span> Stellar Jade</p>
                     <div class="pl-5">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
+            <div class="bgcontainer h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
                 <div>
                     <p class="flex flex-row">Soft Pity: <span class="text-title">{{ soft_pity }}</span>
                         <Tooltip v-if="banner_type" 
@@ -57,12 +57,12 @@
                     <p>Hard Pity: <span class="text-title">{{ hard_pity }}</span></p>
                 </div>
                 <div class="child:flex child:flex-row">
-                    <p>Chance of 5 <img class="w-5 object-contain mr-1" src="/images/other/star.png"> Warp in next {{ banner_type_name }} pull: <span class="text-title pl-1">{{ next_pull }}%</span>
+                    <p class="inline-image">Chance of 5 <img src="/images/other/star.png"> Warp in next {{ banner_type_name }} pull: <span class="text-title pl-1">{{ next_pull }}%</span>
                         <Tooltip v-if="banner_type" 
                         message="This percentage is pure speculation. 
                         Confirmed values have yet to be discovered."/>
                     </p>
-                    <p>Chance of 5 <img class="w-5 object-contain mr-1" src="/images/other/star.png"> Warp in next {{ banner_type_name }} 10 pull: <span class="text-title pl-1">{{ next_10_pull }}%</span>
+                    <p class="inline-image">Chance of 5 <img src="/images/other/star.png"> Warp in next {{ banner_type_name }} 10 pull: <span class="text-title pl-1">{{ next_10_pull }}%</span>
                         <Tooltip v-if="banner_type" 
                         message="This percentage is pure speculation. 
                         Confirmed values have yet to be discovered."/>

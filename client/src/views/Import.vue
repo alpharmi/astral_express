@@ -36,8 +36,9 @@
                 copySvg.setAttribute("d", "M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z")
             },
             importWarps() {
+                /*
                 //const warpURL = document.getElementById("warpURL").value
-                const warpURL = "https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog?authkey_ver=1&sign_type=2&auth_appid=webview_gacha&win_mode=fullscreen&gacha_id=dbebc8d9fbb0d4ffa067423482ce505bc5ea&timestamp=1681910018&region=prod_official_asia&default_gacha_type=11&lang=en&authkey=SOIw202%2F0SubUiSlCe4kr2fWc2Vab9c6WLgC1qjIj%2FSZNsPoW3pw03u16%2ByJr%2F2KTa1I5JZUlITJ5l1Lubu2zIohEfOnStwObWTxLdHfhGZf4PHiJLYqDCP5KU8M8j8uqhZyFzv5XCzF8QXfrEpCFnL41zFsVVsDcqHEQAKp%2F8NYPBD8qZRGRf%2FfNPhwPr1pDSOqaVA1ng9XGfC%2Bddo02rr9xDLd%2BuO0ML1o3fCE90nnysqjBYL5UJ14ZQ%2FvA9CkINoALCEt3DosYF%2BKIb%2BhNSOrOpRzvjKcnHXDPLSz4gKssv9T%2FnCk1LGTKnWys4MVKtUgad8RomSTYddT5bZR7iBY36czLAno142dFpiKtY2RTRyROdWPqwvjCs4ReNajAex%2BSsN9pTdYZPUu0DRTsNYGWexsdvsRFx1j5xx1hy8i6vo4AgMIEUcCC8VWGG%2Fowu3Teef%2BOEmkhCLydMjr7iof%2B6v8s58MqdfxL342Z6b798yAqbY%2FruIuUvpjasR3hZhRsfJl37gOgQODhJezbLAoAhujJq5XW0Dkww1wdFGyroFy69mRtO0k1YZJMiCunEjhqLbAz%2BVStm482LNai45WH%2Ff1MyO2a32JwFYWXHozrvOVLHR9K1wiMOSVbRjE2C%2FNbWXulpqsRdciOqkwqngs%2BWWMXS5lWe79YK4cgN4%3D&game_biz=hkrpg_global&os_system=Windows%2010%20%20%2810.0.19044%29%2064bit&device_model=B360%20AORUS%20GAMING%203%20%28Gigabyte%20Technology%20Co.%2C%20Ltd.%29&plat_type=pc&page=1&size=5&gacha_type=11&end_id=0"
+                const warpURL = "https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog?authkey_ver=1&sign_type=2&auth_appid=webview_gacha&win_mode=fullscreen&gacha_id=ceef3b655e094f3f603c57e581c98dad09b3&timestamp=1681910039&region=prod_official_asia&default_gacha_type=12&lang=en&authkey=SOIw202%2F0SubUiSlCe4kr2fWc2Vab9c6WLgC1qjIj%2FSZNsPoW3pw03u16%2ByJr%2F2KTa1I5JZUlITJ5l1Lubu2zIohEfOnStwObWTxLdHfhGZf4PHiJLYqDCP5KU8M8j8uqhZyFzv5XCzF8QXfrEpCFnL41zFsVVsDcqHEQAKp%2F8NYPBD8qZRGRf%2FfNPhwPr1pDSOqaVA1ng9XGfC%2Bddo02rr9xDLd%2BuO0ML1o3fCE90nnysqjBYL5UJ14ZQ%2FvA9CkINoALCEt3DosYF%2BKIb%2BhNSOrOpRzvjKcnHXDPLSz4gKssv9T%2FnCk1LGTKnWys4MVKtUgad8RomSTYddT5bZR7mV5KD7qn4WROo1rNzTL7fbv0xxdOUqCUx6BoTXGicguyJqIpylDIuKj%2FYFUoaKzbbDfDqbOp%2B1OLnHzT%2Be8B%2Bqz%2FHztJYC9ScNs0dETpXKwCpO0alNIleP6yxmY9lvSLvyDG58LT33YGKYXIH2gTSMvcyvg%2BTLF4oimFRdvlIkYrRdFli%2BY3tHy99GNaiga%2Foe6vtidyOogYrvVm3zZGDNtsL8HoTylLs3RxpvWIcH3UtzavtGXFVklr1nB4%2B%2FmzHwlsklCfHZt2qjjcbTAYjWiZDQ5Mrcs1mZUWmx4JW1Qs9qlV9m%2Bhjo41oZ5W5HL5CX1EBeM%2BFOQ1A8q9SvyiU4%3D&game_biz=hkrpg_global&os_system=Windows%2010%20%20%2810.0.19044%29%2064bit&device_model=B360%20AORUS%20GAMING%203%20%28Gigabyte%20Technology%20Co.%2C%20Ltd.%29&plat_type=pc&page=1&size=5&gacha_type=12&end_id=0"
             
                 if (warpURL.startsWith("https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog")) {
                     const authkey = warpURL.split("&authkey=")[1].split("&game_biz=")[0].replaceAll("%2F", "/").replaceAll("%2B", "+").replaceAll("%3D", "=")
@@ -47,9 +48,17 @@
                         authkey: authkey,
                         region: region
                     })).then(response => response.json()).then(data => {
-                        localStorage.setItem("warps", JSON.stringify(data))        
+                        const formattedData = {
+                            characterWarps: {
+                                lastId: data[0][0],
+                                data: data
+                            }
+                        }
+
+                        localStorage.setItem("warps", JSON.stringify(formattedData))        
                     })
                 }
+                */
             }
         }
     }

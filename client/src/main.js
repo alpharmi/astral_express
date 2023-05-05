@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueCookies from "vue-cookies"
 import * as VueRouter from 'vue-router'
 import './assets/tailwind.css'
 
@@ -24,5 +23,4 @@ const router = VueRouter.createRouter({
 
 const app = createApp(App)
 app.use(router)
-app.use(VueCookies)
 app.mount("#app")

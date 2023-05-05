@@ -17,15 +17,19 @@
     --bg: #1a1d23;
     --container: #10101dd0;
     --title: #d3bc8e;
+    --description: #9393b4;
+    --legendary: #ffb13f;
+    --rare: #d28fd6;
 }
 
 html {
+    color-scheme: light dark;
     background: var(--bg) url("/images/other/astralExpress.png") no-repeat;
     background-size: 150%;
     background-position: top right;
     font-family: 'Tahoma', helvetica, sans-serif;
     overflow-x: hidden;
-    color: white;
+    color: #edf2f7;
     cursor: url("/images/other/cursor.png") 4 2, auto;
 }
 
@@ -34,12 +38,18 @@ html {
     flex-direction: column;
 }
 
-.container {
+.bgcontainer {
     border-image: url("/images/other/containerDetail.png");
     border-image-slice: 33 33 33 33;
     border-width: 10px;
     background-color: var(--container);
     background-size: cover;
+}
+
+.button {
+    background-image: url("/images/other/button.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .buttonThin {
@@ -117,6 +127,30 @@ html {
 }
 .tooltip:hover span {
     opacity: 1;
+}
+
+.inline-image {
+    display: flex;
+    flex-direction: row;
+}
+.inline-image img {
+    width: 1.25rem;
+    object-fit: contain;
+    margin-right: 0.25rem;
+}
+
+.warp-legendary {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 1%, rgba(255, 177, 63, 0.3) 20%, rgba(0, 0, 0, 0) 99%);
+}
+.warp-rare {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 1%, rgba(210, 143, 214, 0.3) 20%, rgba(0, 0, 0, 0) 99%);
+}
+.warp-common {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 99%);
+}
+
+.link {
+    color: #f3bbd4;
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {

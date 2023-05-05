@@ -12,6 +12,4 @@
             path: route,
         })
     }
-
-    redirect("calculator")
 </script>
