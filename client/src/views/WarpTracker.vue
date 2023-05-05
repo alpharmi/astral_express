@@ -49,10 +49,10 @@
                                     <th class="text-center">Pity</th>
                                     <th>Name</th>
                                 </tr>
-                                <tr v-for="warp in warps" :class="'warp-' + warp[4]" class="border-t border-gray-900 child:font-normal child:py-1">
+                                <tr v-for="warp in warps" :class="'warp-' + warp[4]" class="border-t border-gray-900 child:font-normal child:py-2">
                                     <th class="w-[12.5rem] pl-5 text-sm font-mono">{{ timeToDay(warp[3]) }}</th>
                                     <th class="text-center">74</th>
-                                    <th class="pr-10">{{ warp[1] }}</th>
+                                    <th class="pr-10 inline-image gap-3"><img class="scale-[2]" :class="{ 'scale-[1.5]': warp[2] == 'light_cone' }" :src="`/images/items/${warp[2]}/${warp[1].toLowerCase().replaceAll(' ', '_')}.webp`"/>{{ warp[1] }}</th>
                                 </tr>
                             </table>
                         </div>
@@ -98,7 +98,7 @@
             }
             */
 
-            this.warps = {0: ['1683004200000606308', 'Adversarial', 'Light Cone', '2023-05-02 13:14:56', 'common'], 1: ['1683000600000811408', 'Loop', 'Light Cone', '2023-05-02 12:21:46', 'common'], 2: ['1682997000001501608', 'Fine Fruit', 'Light Cone', '2023-05-02 11:39:38', 'common'], 3: ['1682993400001905408', 'Hidden Shadow', 'Light Cone', '2023-05-02 10:54:35', 'common'], 4: ['1682993400001665408', 'Pioneering', 'Light Cone', '2023-05-02 10:48:12', 'common'], 5: ['1682993400001659708', 'Dan Heng', 'Character', '2023-05-02 10:48:08', 'rare'], 6: ['1682993400001654708', 'Hidden Shadow', 'Light Cone', '2023-05-02 10:48:02', 'common'], 7: ['1682921400002232908', 'Chorus', 'Light Cone', '2023-05-01 14:37:49', 'common'], 8: ['1682921400002218708', 'Natasha', 'Character', '2023-05-01 14:37:40', 'rare'], 9: ['1682921400002216008', 'Collapsing Sky', 'Light Cone', '2023-05-01 14:37:38', 'common']}
+            this.warps = {0: ['1683004200000606308', 'Adversarial', 'light_cone', '2023-05-02 13:14:56', 'common'], 1: ['1683000600000811408', 'Loop', 'light_cone', '2023-05-02 12:21:46', 'common'], 2: ['1682997000001501608', 'Fine Fruit', 'light_cone', '2023-05-02 11:39:38', 'common'], 3: ['1682993400001905408', 'Hidden Shadow', 'light_cone', '2023-05-02 10:54:35', 'common'], 4: ['1682993400001665408', 'Pioneering', 'light_cone', '2023-05-02 10:48:12', 'common'], 5: ['1682993400001659708', 'Dan Heng', 'character', '2023-05-02 10:48:08', 'rare'], 6: ['1682993400001654708', 'Hidden Shadow', 'light_cone', '2023-05-02 10:48:02', 'common'], 7: ['1682921400002232908', 'Chorus', 'light_cone', '2023-05-01 14:37:49', 'common'], 8: ['1682921400002218708', 'Natasha', 'character', '2023-05-01 14:37:40', 'rare'], 9: ['1682921400002216008', 'Collapsing Sky', 'light_cone', '2023-05-01 14:37:38', 'common']}
         }
     }
 </script>
