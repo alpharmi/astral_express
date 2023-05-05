@@ -4,7 +4,6 @@
             <h1 class="text-4xl pb-2 text-title font-bold">Calculator</h1>
             <p>Calculate how many Stellar Jades are required for <br> your next 4/5 star pulls.</p>
         </div>
-        <button @click="redirect('/warp/import')" class="button p-3 px-20 font-bold text-xl">Import</button>
     </div>
     <Split/>
     <div class="grid grid-cols-2 md:flex md:gap-10 flex-wrap gap-5">

@@ -5,6 +5,7 @@
                 <h1 class="text-4xl pb-2 text-title font-bold">Warp Tracker</h1>
                 <p>Track the amount of warps you've made, and how <br> many are needed until your next 5 star.</p>
             </div>
+            <button @click="redirect('/warp/import')" class="button p-3 px-20 font-bold text-xl">Import</button>
         </div>
         <Split/>
         <div class="flex flex-row gap-10">
