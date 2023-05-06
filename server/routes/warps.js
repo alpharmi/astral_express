@@ -45,7 +45,7 @@ router.get("/warps/importWarps", async (req, res) => {
 
                 if (listLength > 0) {
                     warpData.data.list.forEach(warp => {
-                        warps.push([warp.id, warp.name, warp.item_type.toLowerCase().replace(" ", "_"), warp.time])
+                        warps.push([warp.id, warp.name.toLowerCase().replace(" ", "_"), warp.item_type.toLowerCase().replace(" ", "_"), warp.time])
                     })
 
                     last_id = warpData.data.list[listLength].id

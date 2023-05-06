@@ -13,7 +13,8 @@ module.exports = {
         "title": "var(--title)",
         "description": "var(--description)",
         "legendary": "var(--legendary)",
-        "rare": "var(--rare)"
+        "rare": "var(--rare)",
+        "pink": "var(--pink)"
       }
     },
   },

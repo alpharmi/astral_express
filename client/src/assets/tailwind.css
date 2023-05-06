@@ -20,6 +20,8 @@
     --description: #9393b4;
     --legendary: #ffb13f;
     --rare: #d28fd6;
+
+    --pink: #f3bbd4;
 }
 
 html {
@@ -146,17 +148,17 @@ html {
 }
 
 .warp-legendary {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 1%, rgba(255, 177, 63, 0.3) 20%, rgba(0, 0, 0, 0) 99%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 1%, rgba(255, 177, 63, 0.2) 20%, rgba(0, 0, 0, 0) 99%);
 }
 .warp-rare {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 1%, rgba(210, 143, 214, 0.3) 20%, rgba(0, 0, 0, 0) 99%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 1%, rgba(210, 143, 214, 0.2) 20%, rgba(0, 0, 0, 0) 99%);
 }
 .warp-common {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 99%);
 }
 
 .link {
-    color: #f3bbd4;
+    color: var(--pink);
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {

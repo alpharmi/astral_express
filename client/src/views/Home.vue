@@ -7,7 +7,7 @@
                     Multipurpose tool that currently includes to help with
                     your Honkai Adventures. Currently includes warp history, 
                     warp calculator, and general game information.
-                    Please note everything is still in development.
+                    Please note everything is <span class="text-pink">still in development.</span>
                 </p>
             </div>
         </div>

@@ -21,6 +21,8 @@
 </template>
 
 <script>
+    import rarities from "../data/rarities.json"
+
     export default {
         methods: {
             copytoclipboard() {
@@ -47,6 +49,25 @@
                         region: region
                     })).then(response => response.json()).then(data => {
                         if (data) {
+                            const warpsLength = data.length
+                            var special = {
+                                legendary: 0,
+                                rare: 0
+                            }
+
+                            for (const [i, warp] of Object.entries(data).reverse()) {
+                                const rarity = rarities[warp[1]]
+
+                                if (rarity) {
+                                    const current = (warpsLength - i)
+                                    const pity = current - special[rarity]
+                                    special[rarity] = current
+                                    warp.push(pity)
+                                } else {
+                                    warp.push(1)
+                                }
+                            }
+
                             const formattedData = {
                                 character: {
                                     lastId: data[0][0],
