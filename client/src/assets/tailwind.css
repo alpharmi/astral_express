@@ -51,11 +51,17 @@ html {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
 .buttonThin {
     background-image: url("/images/other/buttonThin.png");
     background-repeat: no-repeat;
     background-size: contain;
+}
+.buttonSquare {
+    background-image: url("/images/other/buttonSquare.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    line-height: 0.75rem;
+    border-radius: 0.375rem;
 }
 
 .split {

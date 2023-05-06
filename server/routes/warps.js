@@ -18,10 +18,10 @@ takumiQuery = new URLSearchParams({
 router.get("/warps/importWarps", async (req, res) => {
     const authkey = req.query.authkey
     const region = req.query.region
+    var warps = null
 
     if (authkey && region) {
         const query = takumiQuery
-        const warps = []
         /*const warps = {
             0: ["1682521800004743708", "Seele", "Character", "2023-05-02 10:48:12"],
             1: ["1682518200007432408", "Herta", "Character", "2023-05-02 10:48:11"],
@@ -30,6 +30,8 @@ router.get("/warps/importWarps", async (req, res) => {
         */
         var last_id = 0
 
+        warps = []
+
         query.set("authkey", authkey)
         query.set("region", region)
 
@@ -37,27 +39,27 @@ router.get("/warps/importWarps", async (req, res) => {
             query.set("end_id", last_id)
 
             const warpData = await fetch("https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog?" + query).then(response => response.json())
-            const listLength = warpData.data.list.length - 1
 
-            if (listLength > 0) {
-                warpData.data.list.forEach(warp => {
-                    warps.push([warp.id, warp.name, warp.item_type.toLowerCase().replace(" ", "_"), warp.time])
-                })
+            if (warpData && warpData.data) {
+                const listLength = warpData.data.list.length - 1
 
-                last_id = warpData.data.list[listLength].id
-                break
-                //await sleep(100)
+                if (listLength > 0) {
+                    warpData.data.list.forEach(warp => {
+                        warps.push([warp.id, warp.name, warp.item_type.toLowerCase().replace(" ", "_"), warp.time])
+                    })
+
+                    last_id = warpData.data.list[listLength].id
+                    await sleep(1000)
+                } else {
+                    break
+                }
             } else {
                 break
             }
         }
-
-        console.log(warps)
-
-        res.json(warps)
-    } else {
-        res.json(null)
     }
+
+    res.json(warps)
 })
 
 module.exports = router

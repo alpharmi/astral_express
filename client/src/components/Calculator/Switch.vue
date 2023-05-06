@@ -1,6 +1,6 @@
 <template>
     <div class="bgcontainer w-fit flex flex-row h-14 gap-2">
-        <img :src="`/images/items/${value}.webp`" class="w-9">
+        <img :src="`/images/other/${value}.webp`" class="w-9">
         <div class="flex flex-col w-min text-sm capitalize">
             <p class="text-title w-max pr-1">{{ value.replaceAll("_", " ") }}</p>
             <div class="flex flex-row align-middle gap-2 w-max">

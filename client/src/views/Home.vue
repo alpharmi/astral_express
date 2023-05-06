@@ -19,7 +19,7 @@
                     a DPS, Support, or more, we have it all.
                 </p>
                 <button @click="redirect('calculator')" class="flex button mt-3 gap-2 p-1 px-3 items-center">
-                    <img class="w-9" src="/images/items/oneiric_shard.webp">
+                    <img class="w-9" src="/images/other/oneiric_shard.webp">
                     <p class="font-bold">Calculator ></p>
                 </button>
             </div>
@@ -30,7 +30,7 @@
                     a DPS, Support, or more, we have it all.
                 </p>
                 <button @click="redirect('warp')" class="flex button mt-3 gap-2 p-1 px-3 items-center">
-                    <img class="w-9" src="/images/items/star_rail_pass.webp">
+                    <img class="w-9" src="/images/other/star_rail_pass.webp">
                     <p class="font-bold">Warp History ></p>
                 </button>
             </div>
