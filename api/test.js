@@ -1,3 +1,5 @@
 export default async function handler(req, res) {
-    res.end("test")
+    fetch("https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog?" + query).then(response => response.json()).then(data => {
+        res.end(data)
+    })
 }
