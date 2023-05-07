@@ -109,11 +109,11 @@
         methods: {
             switchBanner(banner) {
                 this.banner = banner
-                this.warps = this.getWarps(200, this.banner)
+                this.warps = this.getWarps(10, this.banner)
             },
             filterWarps(filter) {
                 this.filters[filter] ^= true
-                this.warps = this.getWarps(200, this.banner)
+                this.warps = this.getWarps(10, this.banner)
             },
             timeToDay(time) {
                 return `${days[new Date(time).getDay()]} ${time}`
@@ -134,7 +134,7 @@
             }
         },
         mounted: function() {
-            this.warps = this.getWarps(200, this.banner)
+            this.warps = this.getWarps(10, this.banner)
         }
     }
 </script>
