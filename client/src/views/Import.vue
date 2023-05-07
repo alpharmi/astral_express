@@ -46,13 +46,13 @@
                 copySvg.setAttribute("d", "M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z")
             },
             async getWarps(authkey, region, id) {
-                const response = await fetch("https://astral-express.vercel.app/api/test?" + new URLSearchParams({
+                const response = await fetch("http://localhost:3000/api/warps/importWarps?" + new URLSearchParams({
                     authkey: authkey,
                     region: region,
                     gacha_type: id
                 })).then(response => response.json())
 
-                if (response) {
+                if (response.length > 0) {
                     const last = {
                         legendary: 0,
                         rare: 0
@@ -90,6 +90,8 @@
 
                     return formattedData
                 }
+
+                return null
             },
             async importWarps() {
                 const warpURL = document.getElementById("warpURL").value
@@ -108,9 +110,11 @@
                     for (const [gachaType, id] of Object.entries(gachaTypes)) {
                         const warps = await this.getWarps(authkey, region, id)
 
-                        this.totalWarps += warps.data.length
+                        if (warps) {
+                            this.totalWarps += warps.data.length
 
-                        localStorage.setItem("warps_" + gachaType, JSON.stringify(warps))  
+                            localStorage.setItem("warps_" + gachaType, JSON.stringify(warps))  
+                        }
                     }
 
                     this.importing = false
