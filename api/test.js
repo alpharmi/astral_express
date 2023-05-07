@@ -1,6 +1,6 @@
 const sleep = time => new Promise(res => setTimeout(res, time))
 
-takumiQuery = new URLSearchParams({
+const takumiQuery = new URLSearchParams({
     authkey_ver: 1,
     sign_type: 2,
     game_biz: "hkrpg_global",
