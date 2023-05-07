@@ -51,5 +51,5 @@ export default async function handler(req, res) {
         }
     }
 
-    res.json(warps)
+    res.json([authkey, region, gachaType])
 }
