@@ -10,30 +10,25 @@ takumiQuery = new URLSearchParams({
     lang: "en",
     authkey: "",
     region: "",
+    gacha_type: 0,
     size: 20,
-    gacha_type: 11,
     end_id: 0
 })
 
 router.get("/warps/importWarps", async (req, res) => {
     const authkey = req.query.authkey
     const region = req.query.region
-    var warps = null
+    const gachaType = req.query.gacha_type
+    //const lastId = req.query.last_id
+    var warps = []
 
-    if (authkey && region) {
+    if (authkey && region && gachaType) {
         const query = takumiQuery
-        /*const warps = {
-            0: ["1682521800004743708", "Seele", "Character", "2023-05-02 10:48:12"],
-            1: ["1682518200007432408", "Herta", "Character", "2023-05-02 10:48:11"],
-            2: ["1683004200000606308", "Adversarial", "Light-Cone", "2023-05-02 10:48:10"]
-        }
-        */
         var last_id = 0
-
-        warps = []
 
         query.set("authkey", authkey)
         query.set("region", region)
+        query.set("gacha_type", gachaType)
 
         while (true) {
             query.set("end_id", last_id)
@@ -45,7 +40,7 @@ router.get("/warps/importWarps", async (req, res) => {
 
                 if (listLength > 0) {
                     warpData.data.list.forEach(warp => {
-                        warps.push([warp.id, warp.name.toLowerCase().replace(" ", "_"), warp.item_type.toLowerCase().replace(" ", "_"), warp.time])
+                        warps.push([warp.id, warp.name.toLowerCase().replaceAll(" ", "_"), warp.item_type.toLowerCase().replaceAll(" ", "_"), warp.time])
                     })
 
                     last_id = warpData.data.list[listLength].id
