@@ -119,8 +119,8 @@
                 return `${days[new Date(time).getDay()]} ${time}`
             },
             getWarps(amount, banner) {
-                //var warps = JSON.parse(localStorage.getItem("warps_" + banner))
-                var warps = JSON.parse(exampleData[banner])
+                var warps = JSON.parse(localStorage.getItem("warps_" + banner))
+                //var warps = JSON.parse(exampleData[banner])
 
                 if (warps) {
                     this.pulls.lifetime = warps.lifetime
