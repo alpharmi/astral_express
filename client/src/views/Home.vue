@@ -1,8 +1,8 @@
 <template>
     <div class="flex flex-row flex-wrap w-full px-20 gap-5 place-content-center child:max-w-md">
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-5">
             <div class="bgcontainer p-4 flex-col bg-bg-dark-80 gap-3">
-                <h1 class="font-bold text-title">Welcome to astral express</h1>
+                <h1 class="font-bold text-title pb-2">Welcome to astral express</h1>
                 <p>
                     Multipurpose tool that currently includes to help with
                     your Honkai Adventures. Currently includes warp history, 
@@ -14,20 +14,20 @@
         <div class="flex flex-col gap-5">
             <div class="bgcontainer p-4 flex-col bg-bg-dark-80 gap-3">
                 <p>
-                    Search through pre-existing community submitted builds
-                    for various Characters. Whenever you're looking for
-                    a DPS, Support, or more, we have it all.
+                    Calculate the amount of warps needed to hit your
+                    next soft or hard pity. Includes the option to
+                    switch between Character and Light Cone banners.
                 </p>
-                <button @click="redirect('calculator')" class="flex button mt-3 gap-2 p-1 px-3 items-center">
+                <button @click="redirect('warp/calculator')" class="flex button mt-3 gap-2 p-1 px-3 items-center">
                     <img class="w-9" src="/images/other/oneiric_shard.webp">
-                    <p class="font-bold">Calculator ></p>
+                    <p class="font-bold">Warp Calculator ></p>
                 </button>
             </div>
             <div class="bgcontainer p-4 flex-col bg-bg-dark-80 gap-3">
                 <p>
-                    Search through pre-existing community submitted builds
-                    for various Characters. Whenever you're looking for
-                    a DPS, Support, or more, we have it all.
+                    Import your warp history to view your latest and
+                    previous pulls for Character, Light Cone, Regular
+                    banners.
                 </p>
                 <button @click="redirect('warp')" class="flex button mt-3 gap-2 p-1 px-3 items-center">
                     <img class="w-9" src="/images/other/star_rail_pass.webp">

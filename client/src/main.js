@@ -5,14 +5,14 @@ import './assets/tailwind.css'
 
 import Home from "./views/Home.vue"
 import WarpTracker from "./views/WarpTracker.vue"
+import WarpCalculator from "./views/WarpCalculator.vue"
 import Import from "./views/Import.vue"
-import Calculator from "./views/Calculator.vue"
 
 const routes = [
     { path: "", component: Home },
     { path: "/warp", component: WarpTracker },
     { path: "/warp/import", component: Import},
-    { path: "/calculator", component: Calculator}
+    { path: "/warp/calculator", component: WarpCalculator}
 ]
 
 const router = VueRouter.createRouter({
