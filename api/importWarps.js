@@ -47,7 +47,7 @@ const authkey = req.query.authkey
                     })
 
                     last_id = warpData.data.list[listLength].id
-                    await sleep(1000)
+                    await sleep(500)
                 } else {
                     break
                 }

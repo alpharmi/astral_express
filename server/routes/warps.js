@@ -50,7 +50,7 @@ router.get("/warps/importWarps", async (req, res) => {
                     })
 
                     last_id = warpData.data.list[listLength].id
-                    await sleep(1000)
+                    await sleep(500)
                 } else {
                     break
                 }

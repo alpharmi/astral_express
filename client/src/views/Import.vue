@@ -18,9 +18,10 @@
             <button @click="importWarps" class="buttonThin ml-10 w-72 h-12 text-center pb-3">Import</button>
         </div>
     </div>
-    <div v-if="importing" class="fixed flex flex-col items-center justify-center rounded-md border-[1px] border-[#000000] bg-[#212136] top-[calc(50%-5rem)] left-1/2 -translate-x-1/2 w-44 h-24">
+    <div v-if="importing" class="fixed flex flex-col items-center justify-center rounded-md border-[1px] border-[#000000] bg-[#212136] top-[calc(50%-5rem)] left-1/2 -translate-x-1/2 w-80 h-24 px-2">
         <p class="text-description">Importing...</p>
         <p class="text-xl">Warps: <span class="text-title">{{ totalWarps }}</span></p>
+        <p class="text-description">Please be patient, this may take awhile.</p>
     </div>
 </template>
 
@@ -46,7 +47,7 @@
                 copySvg.setAttribute("d", "M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z")
             },
             async getWarps(authkey, region, id, lastId) {
-                const response = await fetch("https://astral-express.vercel.app/api/importWarps?" + new URLSearchParams({ //http://localhost:3000/api/warps/importWarps?
+                const response = await fetch("http://localhost:3000/api/warps/importWarps?" + new URLSearchParams({ //http://localhost:3000/api/warps/importWarps?
                     authkey: authkey,
                     region: region,
                     gacha_type: id,
@@ -124,6 +125,7 @@
                         }
 
                         this.importing = false
+                        this.$router.push({path: "/warp"})
                     }
                 }
             }
@@ -139,10 +141,4 @@
     import Instruction from "../components/WarpTracker/Instruction.vue"
 
     const router = vueRouter.useRouter()
-
-    function redirect(route) {
-        router.push({
-            path: route,
-        })
-    }
 </script>
