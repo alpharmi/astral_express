@@ -26,8 +26,8 @@
             <div class="bgcontainer p-4 flex-col bg-bg-dark-80 gap-3">
                 <p>
                     Import your warp history to view your latest and
-                    previous pulls for Character, Light Cone, Regular
-                    banners.
+                    previous pulls for Character, Light Cone, and
+                    Regular banners.
                 </p>
                 <button @click="redirect('warp')" class="flex button mt-3 gap-2 p-1 px-3 items-center">
                     <img class="w-9" src="/images/other/star_rail_pass.webp">
