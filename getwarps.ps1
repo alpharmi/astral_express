@@ -16,6 +16,7 @@ Copy-Item -Path "$gamePath/webCaches/Cache/Cache_Data/data_2" -Destination "$gam
 $cacheData = Get-Content -Encoding UTF8 -Raw "$gamePath/webCaches/Cache/Cache_Data/data_2_copy"
 Remove-Item -Path "$gamePath/webCaches/Cache/Cache_Data/data_2_copy"
 $cacheDataLines = $cacheData -split '1/0/'
+$foundUrl = "false"
 
 for ($i = $cacheDataLines.Length - 1; $i -ge 0; $i--) {
     $line = $cacheDataLines[$i]
@@ -29,7 +30,12 @@ for ($i = $cacheDataLines.Length - 1; $i -ge 0; $i--) {
             Write-Output $url
             Set-Clipboard -Value $url
             Write-Output "Warp History Url has been saved to clipboard."
+            $foundUrl = "true"
             return
         }
     }
+}
+
+if ($foundUrl -eq "false") {
+    Write-Output "Unable to find Gacha Url. Please open warp history in-game."
 }
