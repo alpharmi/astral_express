@@ -45,16 +45,10 @@
                                 <p class="text-4xl text-rare">{{ pulls.rare }}</p>
                             </div>
                         </div>
-                        <div class="bgcontainer w-[37.25rem] p-2">
-                            <div class="w-[24.6rem]">
-                                <tr class="text-title child:font-normal">
-                                    <th>Character Warp</th>
-                                    <th>Total</th>
-                                    <th>Percent</th>
-                                </tr>
-                                <tr>
-
-                                </tr>
+                        <div class="bgcontainer w-[37.25rem] h-[16.75rem] p-2">
+                            <WarpHistory v-if="monthlyPulls" :monthlyPulls="monthlyPulls"/>
+                            <div v-if="!monthlyPulls" class="flex justify-center items-center w-full h-full">
+                                <p class="text-description">No monthly pull data to display.</p>
                             </div>
                         </div>
                     </div>
@@ -102,17 +96,18 @@
                     legendary: true,
                     rare: true,
                     common: true
-                }
+                },
+                monthlyPulls: null
             }
         },
         methods: {
             switchBanner(banner) {
                 this.banner = banner
-                this.warps = this.getWarps(10, this.banner)
+                this.getWarps(10, this.banner)
             },
             filterWarps(filter) {
                 this.filters[filter] ^= true
-                this.warps = this.getWarps(10, this.banner)
+                this.getWarps(10, this.banner)
             },
             timeToDay(time) {
                 return `${days[new Date(time).getDay()]} ${time}`
@@ -121,26 +116,30 @@
                 var warps = JSON.parse(localStorage.getItem("warps_" + banner))
 
                 if (warps) {
+                    const lifetimeWarps = warps.lifetime
+
                     this.pulls.lifetime = warps.lifetime
-                    this.pulls.legendary = warps.pity.legendary || warpsLength
-                    this.pulls.rare = warps.pity.rare || warpsLength
+                    this.pulls.legendary = warps.pity[0] || lifetimeWarps
+                    this.pulls.rare = warps.pity[1] || 0
 
                     const filtered = warps.data.filter(warp => this.filters[warp[4]]).slice(0, amount)
 
-                    return filtered
+                    this.monthlyPulls = Object.fromEntries(Object.entries(warps.monthlyPulls).slice(0, 5))
+                    this.warps = filtered
                 }
 
                 return null
             }
         },
         mounted: function() {
-            this.warps = this.getWarps(10, this.banner)
+            this.getWarps(10, this.banner)
         }
     }
 </script>
 
 <script setup>
     import Split from "../components/Split.vue"
+    import WarpHistory from "../components/WarpTracker/WarpHistory.vue"
 
     import * as vueRouter from "vue-router"
 

@@ -47,7 +47,7 @@
                 copySvg.setAttribute("d", "M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z")
             },
             async getWarps(authkey, region, id, lastId) {
-                const response = await fetch("http://localhost:3000/api/warps/importWarps?" + new URLSearchParams({ //http://localhost:3000/api/warps/importWarps?
+                const response = await fetch("https://astral-express.vercel.app/api/importWarps?" + new URLSearchParams({ //https://astral-express.vercel.app/api/importWarps? http://localhost:3000/api/warps/importWarps?
                     authkey: authkey,
                     region: region,
                     gacha_type: id,
@@ -63,17 +63,28 @@
                         legendary: 0,
                         rare: 0,
                     }
+                    const amount = {}
                     const responseLength = response.length
 
                     for (const [i, warp] of Object.entries(response).reverse()) {
+
                         const rarity = rarities[warp[1]]
+                        const date = warp[3].substring(0, 7)
+                        var amountInMonth = amount[date]
+
+                        if (!amountInMonth) {
+                            amount[date] = {total: 0, legendary: 0, rare: 0}
+                            amountInMonth = amount[date]
+                        }
 
                         if (rarity) {
                             const current = responseLength - i
                             const warpPity = current - last[rarity]
+                            const date = warp[3].substring(0, 7)
 
                             last[rarity] = current
                             pity[rarity] = i
+                            amountInMonth[rarity] += 1
 
                             warp.push(rarity)
                             warp.push(warpPity)
@@ -81,14 +92,33 @@
                             warp.push("common")
                             warp.push(1)
                         }
+
+                        amountInMonth.total += 1
                     }
+
+                    for (var [date, warps] of Object.entries(amount)) {
+                        const formatted = []
+
+                        formatted[0] = warps.total
+                        formatted[1] = warps.legendary
+                        formatted[2] = warps.rare
+
+                        amount[date] = formatted
+                    }
+
+                    console.log(amount)
+
+                    //monthlyPulls[new Date().toISOString().substring(0, 7)] = [response.length, amount.legendary, amount.rare]
 
                     const formattedData = {
                         data: response,
-                        pity: pity,
-                        lifetime: response.length,
-                        lastId: response[0][0]
+                        pity: [Number(pity.legendary), Number(pity.rare)],
+                        lifetime: responseLength,
+                        lastId: response[0][0],
+                        monthlyPulls: amount
                     }
+
+                    console.log(formattedData)
 
                     return formattedData
                 }
