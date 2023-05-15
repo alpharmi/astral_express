@@ -7,6 +7,7 @@
     "build": "cd client && vite build"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.1",
     "autoprefixer": "^10.4.13",
     "chart.js": "^4.3.0",
     "concurrently": "^7.6.0",
