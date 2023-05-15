@@ -7,6 +7,7 @@
             </div>
             <button @click="redirect('/warp/import')" class="button p-3 px-20 font-bold text-xl">Import</button>
         </div>
+        <Note messages="Please note the following page has yet to been optimised for smaller screen devices/windows."/>
         <Split/>
         <div class="flex flex-row gap-10">
             <div class="w-40 min-w-[10rem] flex flex-col gap-2 child:drop-shadow-2xl child:transition-all child:duration-75">
@@ -138,6 +139,7 @@
 </script>
 
 <script setup>
+    import Note from "../components/Note.vue"
     import Split from "../components/Split.vue"
     import WarpHistory from "../components/WarpTracker/WarpHistory.vue"
 
