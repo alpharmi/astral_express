@@ -7,7 +7,7 @@
         <div class="flex flex-col gap-2">
             <div>
                 <p class="text-title">• Visted astral-express.vercel.app URL</p>
-                <p>astral express uses <a href="https://vercel.com/docs/concepts/analytics/privacy-policy" class="link">vercel.com</a> analytics to collect pages viewed, operating system, browser, and visitor</p>
+                <p>astral express uses <a href="https://vercel.com/docs/concepts/analytics/privacy-policy" class="link">vercel.com</a> analytics to collect pages viewed, operating system, browser, and visitor country.</p>
             </div>
         </div>
     </div>
