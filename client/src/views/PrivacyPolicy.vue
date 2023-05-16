@@ -12,9 +12,10 @@
         </div>
     </div>
     <p class="text-title font-bold text-xl">What does Astral Express DOESN'T collect</p>
-    <div class="text-xl ml-10">
-        <p>Astral Express wont ever save passwords, emails, and HoYoverse related data (UIDs, usernames, etc). <br> Feel free to checkout the source code for yourself on <a href="https://github.com/alpharmi/astral_express" class="link">github</a></p>
-    </div>
+    <div class="text-xl ml-10 flex flex-col gap-2">
+        <p>• Astral Express wont ever save passwords, emails, and HoYoverse related data (UIDs, usernames, etc). <br> Feel free to checkout the source code for yourself on <a href="https://github.com/alpharmi/astral_express" class="link">github</a></p>
+        <p>• Warp data is stored within the browser and isn't uploaded anywhere.</p>
+   </div>
 </template>
 
 <script setup>
