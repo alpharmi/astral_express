@@ -13,6 +13,7 @@
                 </button>
                 <p id="copyCommand" class="break-all">Start-Process powershell -Verb runAs -ArgumentList '-NoExit -Command "Invoke-Expression <br/> (New-Object Net.WebClient).DownloadString(\"https://raw.githubusercontent.com/alpharmi/astral_express/main/getwarps.ps1\")"'</p>
             </div>
+            <a href="https://github.com/alpharmi/astral_express/blob/main/getwarps.ps1" class="ml-10 link">GitHub</a>
             <Instruction number="4" description="Paste the URL that was copied into the box below."/>
             <input id="warpURL" type="text" placeholder="Paste warp URL here" class="ml-10 h-auto p-2 w-72 placeholder-neutral-500 bg-container border-[1px] border-[#000000] border-opacity-50 rounded-xl"/>
             <button @click="importWarps" class="buttonThin ml-10 w-72 h-12 text-center pb-3">Import</button>
@@ -46,15 +47,19 @@
                 }, 1000)
                 copySvg.setAttribute("d", "M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z")
             },
-            async getWarps(authkey, region, id, lastId) {
-                const response = await fetch("https://astral-express.vercel.app/api/importWarps?" + new URLSearchParams({ //https://astral-express.vercel.app/api/importWarps? http://localhost:3000/api/warps/importWarps?
+            async getWarps(authkey, region, id, banner) {
+                //https://astral-express.vercel.app/api/importWarps? http://localhost:3000/api/warps/importWarps?
+                const response = await fetch("http://localhost:3000/api/warps/importWarps?" + new URLSearchParams({
                     authkey: authkey,
                     region: region,
                     gacha_type: id,
-                    last_id: lastId
+                    last_id: banner.lastId
                 })).then(response => response.json())
 
                 if (response.length > 0) {
+                    var bannerData = banner.data
+                    bannerData.unshift(...response)
+
                     const last = {
                         legendary: 0,
                         rare: 0
@@ -64,10 +69,9 @@
                         rare: 0,
                     }
                     const amount = {}
-                    const responseLength = response.length
+                    const bannerLength = bannerData.length
 
-                    for (const [i, warp] of Object.entries(response).reverse()) {
-
+                    for (const [i, warp] of Object.entries(bannerData).reverse()) {
                         const rarity = rarities[warp[1]]
                         const date = warp[3].substring(0, 7)
                         var amountInMonth = amount[date]
@@ -78,7 +82,7 @@
                         }
 
                         if (rarity) {
-                            const current = responseLength - i
+                            const current = bannerLength - i
                             const warpPity = current - last[rarity]
                             const date = warp[3].substring(0, 7)
 
@@ -86,11 +90,11 @@
                             pity[rarity] = i
                             amountInMonth[rarity] += 1
 
-                            warp.push(rarity)
-                            warp.push(warpPity)
+                            warp[4] = rarity
+                            warp[5] = warpPity
                         } else {
-                            warp.push("common")
-                            warp.push(1)
+                            warp[4] = "common"
+                            warp[5] = 1
                         }
 
                         amountInMonth.total += 1
@@ -106,19 +110,16 @@
                         amount[date] = formatted
                     }
 
-                    console.log(amount)
-
                     //monthlyPulls[new Date().toISOString().substring(0, 7)] = [response.length, amount.legendary, amount.rare]
 
                     const formattedData = {
-                        data: response,
+                        data: bannerData,
                         pity: [Number(pity.legendary), Number(pity.rare)],
-                        lifetime: responseLength,
-                        lastId: response[0][0],
-                        monthlyPulls: amount
+                        lifetime: bannerLength,
+                        lastId: bannerData[0][0],
+                        monthlyPulls: amount,
+                        version: 1
                     }
-
-                    console.log(formattedData)
 
                     return formattedData
                 }
@@ -138,14 +139,14 @@
                         const region = warpURL.split("&region=")[1].split("&default_gacha_type=")[0]
 
                         for (const [gachaType, id] of Object.entries(gachaTypes)) {
-                            const data = JSON.parse(localStorage.getItem("warps_" + gachaType))
-                            var lastId = 0
+                            var banner = JSON.parse(localStorage.getItem("warps_" + gachaType))
 
-                            if (lastId) {
-                                lastId = data.lastId
+                            if (!banner) {
+                                banner = {data: [], pity: [0, 0], lifetime: 0, lastId: 0, monthlyPulls: [], version: 1}
+                                localStorage.setItem("warps_" + gachaType, JSON.stringify(banner))
                             }
 
-                            const warps = await this.getWarps(authkey, region, id, lastId)
+                            const warps = await this.getWarps(authkey, region, id, banner)
 
                             if (warps) {
                                 this.totalWarps += warps.data.length
@@ -155,7 +156,9 @@
                         }
 
                         this.importing = false
-                        this.$router.push({path: "/warp"})
+                        if (this.totalWarps > 0) {
+                            this.$router.push({path: "/warp"})
+                        }
                     }
                 }
             }

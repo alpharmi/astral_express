@@ -13,7 +13,7 @@ const takumiQuery = new URLSearchParams({
 })
 
 export default async function handler(req, res) {
-const authkey = req.query.authkey
+    const authkey = req.query.authkey
     const region = req.query.region
     const gachaType = req.query.gacha_type
     const lastId = req.query.last_id
