@@ -49,7 +49,7 @@
             </div>
             <div class="bgcontainer w-full h-auto flex flex-wrap p-5 gap-5 items-center justify-center">
                 <div>
-                    <p class="flex flex-row">Soft Pity: <span class="text-title">{{ soft_pity }}</span>
+                    <p class="flex flex-row gap-1">Soft Pity: <span class="text-title">{{ soft_pity }}</span>
                         <Tooltip v-if="banner_type" 
                         message="This value is pure speculation. 
                         Confirmed values have yet to be discovered."/>
