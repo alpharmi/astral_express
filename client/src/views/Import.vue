@@ -49,7 +49,7 @@
             },
             async getWarps(authkey, region, id, banner) {
                 //https://astral-express.vercel.app/api/importWarps? http://localhost:3000/api/warps/importWarps?
-                const response = await fetch("http://localhost:3000/api/warps/importWarps?" + new URLSearchParams({
+                const response = await fetch("https://astral-express.vercel.app/api/importWarps?" + new URLSearchParams({
                     authkey: authkey,
                     region: region,
                     gacha_type: id,
