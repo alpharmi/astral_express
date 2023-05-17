@@ -13,7 +13,7 @@
                 </button>
                 <p id="copyCommand" class="break-all">Start-Process powershell -Verb runAs -ArgumentList '-NoExit -Command "Invoke-Expression <br/> (New-Object Net.WebClient).DownloadString(\"https://raw.githubusercontent.com/alpharmi/astral_express/main/getwarps.ps1\")"'</p>
             </div>
-            <a href="https://github.com/alpharmi/astral_express/blob/main/getwarps.ps1" class="ml-10 link">GitHub</a>
+            <a href="https://github.com/alpharmi/astral_express/blob/main/getwarps.ps1" class="ml-10 link w-max">GitHub</a>
             <Instruction number="4" description="Paste the URL that was copied into the box below."/>
             <input id="warpURL" type="text" placeholder="Paste warp URL here" class="ml-10 h-auto p-2 w-72 placeholder-neutral-500 bg-container border-[1px] border-[#000000] border-opacity-50 rounded-xl"/>
             <button @click="importWarps" class="buttonThin ml-10 w-72 h-12 text-center pb-3">Import</button>
@@ -32,6 +32,7 @@
     export default {
         data() {
             return {
+                production: import.meta.env.PROD,
                 importing: false,
                 totalWarps: 0
             }
@@ -49,7 +50,8 @@
             },
             async getWarps(authkey, region, id, banner) {
                 //https://astral-express.vercel.app/api/importWarps? http://localhost:3000/api/warps/importWarps?
-                const response = await fetch("https://astral-express.vercel.app/api/importWarps?" + new URLSearchParams({
+                const url = this.production? "https://astral-express.vercel.app/api/importWarps?": "http://localhost:3000/api/warps/importWarps?"
+                const response = await fetch(url + new URLSearchParams({
                     authkey: authkey,
                     region: region,
                     gacha_type: id,
