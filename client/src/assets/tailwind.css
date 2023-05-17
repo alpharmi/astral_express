@@ -40,6 +40,14 @@ html {
     flex-direction: column;
 }
 
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 .bgcontainer {
     border-image: url("/images/other/containerDetail.png");
     border-image-slice: 33 33 33 33;
