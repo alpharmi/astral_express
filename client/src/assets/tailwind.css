@@ -22,6 +22,7 @@
     --rare: #d28fd6;
 
     --pink: #f3bbd4;
+    --pink-light: #ffd5e9;
 }
 
 html {
@@ -167,6 +168,17 @@ html {
 
 .link {
     color: var(--pink);
+    cursor: pointer;
+}
+.link:hover {
+    color: var(--pink-light);
+    box-shadow: 0 4px 1px -3px var(--description);
+}
+.link-hidden {
+    cursor: pointer;
+}
+.link-hidden:hover {
+    box-shadow: 0 4px 1px -3px var(--description);
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
