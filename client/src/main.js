@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
 import { inject } from '@vercel/analytics'
-import App from './App.vue'
+import { createI18n } from 'vue-i18n'
 import * as VueRouter from 'vue-router'
+import App from './App.vue'
+import messages from "./i18n.js"
 import './assets/tailwind.css'
 
 import Home from "./views/Home.vue"
@@ -24,7 +26,14 @@ const router = VueRouter.createRouter({
     routes
 })
 
+const i18n = createI18n({
+    locale: "en",
+    fallbackLocale: "en",
+    messages
+})
+
 const app = createApp(App)
 app.use(router)
+app.use(i18n)
 app.mount("#app")
 inject()
