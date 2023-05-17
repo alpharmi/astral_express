@@ -57,7 +57,7 @@ export default async function handler(req, res) {
         }
     }
 
-    console.log(warps.length)
+    console.log(gachaType, warps.length)
 
     res.json(warps)
 }
