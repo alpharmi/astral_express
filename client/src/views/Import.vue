@@ -167,7 +167,6 @@
 </script>
 
 <script setup>
-    import * as VueCookies from "vue-cookies"
     import * as vueRouter from "vue-router"
 
     import Split from "../components/Split.vue"
