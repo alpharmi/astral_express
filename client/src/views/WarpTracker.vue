@@ -120,8 +120,8 @@
                     const lifetimeWarps = warps.lifetime
 
                     this.pulls.lifetime = warps.lifetime
-                    this.pulls.legendary = warps.pity[0] || lifetimeWarps
-                    this.pulls.rare = warps.pity[1] || 0
+                    this.pulls.legendary = warps.pity[0]
+                    this.pulls.rare = warps.pity[1]
 
                     const filtered = warps.data.filter(warp => this.filters[warp[4]]).slice(0, amount)
 
