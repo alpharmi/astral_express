@@ -94,6 +94,18 @@
 
                             warp[4] = rarity
                             warp[5] = warpPity
+
+                            if (!warp[6]) {
+                                if (rarity == "legendary") {
+                                    if (warp[2] == "character") {
+                                        warp[6] = 90 - Math.ceil((100 * warpPity) / 90)
+                                    } else {
+                                        warp[6] = 80 - Math.ceil((100 * warpPity) / 80)
+                                    }
+                                } else if (rarity == "rare") {
+                                    warp[6] = (10 - warpPity) * 10
+                                }
+                            }
                         } else {
                             warp[4] = "common"
                             warp[5] = 1
