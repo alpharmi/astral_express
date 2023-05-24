@@ -4,7 +4,7 @@ const cors = require("cors")
 const app = express()
 
 //const limiter = rateLimit({windowMs: 15 * 60 * 1000, max: 25})
-const routes = [require("./routes/warps")]
+const routes = [require("./routes/warps"), require("./routes/player")]
 
 app.use(cors())
 app.use("/api", routes)

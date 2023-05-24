@@ -15,7 +15,7 @@ takumiQuery = new URLSearchParams({
     end_id: 0
 })
 
-router.get("/warps/importWarps", async (req, res) => {
+router.get("/importWarps", async (req, res) => {
     const authkey = req.query.authkey
     const region = req.query.region
     const gachaType = req.query.gacha_type
