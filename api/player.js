@@ -12,6 +12,7 @@ export default async function handler(req, res) {
         if (playerData) {
             formattedData.name = playerData.player.name
             formattedData.level = playerData.player.level
+            formattedData.signature = playerData.player.signature
             formattedData.characters = []
 
             playerData.characters.forEach(character => {
