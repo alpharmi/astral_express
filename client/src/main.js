@@ -11,7 +11,7 @@ import WarpTracker from "./views/WarpTracker.vue"
 import WarpCalculator from "./views/WarpCalculator.vue"
 import Global from "./views/Global.vue"
 import Import from "./views/Import.vue"
-import Player from "./views/Player.vue"
+//import Player from "./views/Player.vue"
 import PrivacyPolicy from "./views/PrivacyPolicy.vue"
 
 const routes = [
