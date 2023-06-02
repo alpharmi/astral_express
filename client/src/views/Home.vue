@@ -34,6 +34,18 @@
                     <p class="font-bold">Warp History ></p>
                 </button>
             </div>
+            <!--
+            <div class="bgcontainer p-4 flex-col bg-bg-dark-80 gap-3">
+                <p>
+                    Search a player's UID to view their level,
+                    characters, light cones, relics, and more.
+                </p>
+                <button @click="redirect('player')" class="flex button mt-3 gap-2 p-1 px-3 items-center">
+                    <img class="w-9" src="/images/other/trailblaze_exp.webp">
+                    <p class="font-bold">Player Viewer ></p>
+                </button>
+            </div>
+            -->
         </div>
     </div>
 </template>

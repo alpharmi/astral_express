@@ -9,6 +9,11 @@
     font-weight: bold
 }
 
+@font-face {
+    font-family: Honkai;
+    src: url("Honkai_Star_Rail.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -179,6 +184,19 @@ html {
 }
 .link-hidden:hover {
     box-shadow: 0 4px 1px -3px var(--description);
+}
+
+.glow {
+    animation: glow 5s infinite;
+}
+@keyframes glow {
+    0% {box-shadow: 0 0 40px 5px #d3bc8ea8, 0 0 1px 1px #d3bc8ed2;}
+    50% {box-shadow: 0 0 50px 5px #d3bc8e, 0 0 1px 1px #d3bc8ed2;}
+    100% {box-shadow: 0 0 40px 5px #d3bc8ea8, 0 0 1px 1px #d3bc8ed2;}
+}
+
+.honkai {
+    font-family: "Honkai";
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {

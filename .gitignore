@@ -1,4 +1,5 @@
 node_modules
 dev
+client/public/images/other/temp
 .env
 .vscode

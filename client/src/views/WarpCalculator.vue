@@ -1,10 +1,6 @@
 <template>
-    <div class="flex justify-between items-center">
-        <div>
-            <h1 class="text-4xl pb-2 text-title font-bold">Calculator</h1>
-            <p>Calculate how many Stellar Jades are required for <br> your next 4/5 star pulls.</p>
-        </div>
-    </div>
+    <h1 class="text-4xl pb-2 text-title font-bold">Calculator</h1>
+    <p>Calculate how many Stellar Jades are required for <br> your next 4/5 star pulls.</p>
     <Split/>
     <div class="grid grid-cols-2 md:flex md:gap-10 flex-wrap gap-5">
         <div class="flex flex-col gap-10">

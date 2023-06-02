@@ -11,8 +11,8 @@
         <Split/>
         <div class="flex flex-row gap-10">
             <div class="w-40 min-w-[10rem] flex flex-col gap-2 child:drop-shadow-2xl child:transition-all child:duration-75">
-                <button @click="switchBanner('character')" :class="[{'pl-0': banner == 'character'}, {'pl-8': banner != 'character'}]"><img src="/images/other/characterWarp.png"></button>
-                <button @click="switchBanner('light_cone')" :class="[{'pl-0': banner == 'light_cone'}, {'pl-8': banner != 'light_cone'}]"><img src="/images/other/lightConeWarp.png"></button>
+                <button @click="switchBanner('character')" :class="[{'pl-0': banner == 'character'}, {'pl-8': banner != 'character'}]"><img :src="`/images/tickets/${currentBanner}.png`"></button>
+                <button @click="switchBanner('light_cone')" :class="[{'pl-0': banner == 'light_cone'}, {'pl-8': banner != 'light_cone'}]"><img :src="`/images/tickets/lightCone_${currentBanner}.png`"></button>
                 <button @click="switchBanner('regular')" :class="[{'pl-0': banner == 'regular'}, {'pl-8': banner != 'regular'}]"><img src="/images/other/regularWarp.png"></button>
             </div>
             <div v-if="!warps" class="bgcontainer w-full h-[19rem] flex flex-col justify-center items-center">
@@ -82,10 +82,12 @@
 
 <script>
     const days = {0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat"}
+    const currentBanner = "swirl_of_heavenly_spear"
 
     export default {
         data() {
             return {
+                currentBanner: currentBanner,
                 warps: null,
                 banner: "character",
                 pulls: {

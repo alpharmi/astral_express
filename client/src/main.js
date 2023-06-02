@@ -9,14 +9,19 @@ import './assets/tailwind.css'
 import Home from "./views/Home.vue"
 import WarpTracker from "./views/WarpTracker.vue"
 import WarpCalculator from "./views/WarpCalculator.vue"
+import Global from "./views/Global.vue"
 import Import from "./views/Import.vue"
+import Player from "./views/Player.vue"
 import PrivacyPolicy from "./views/PrivacyPolicy.vue"
 
 const routes = [
     { path: "", component: Home },
     { path: "/warp", component: WarpTracker },
+    { path: "/warp/global", component: Global },
     { path: "/warp/import", component: Import},
     { path: "/warp/calculator", component: WarpCalculator},
+    //{ path: "/player", component: Player },
+    //{ path: "/player/:uid", name: "player", component: Player, props: true },
     { path: "/privacy-policy", component: PrivacyPolicy }
 ]
 
