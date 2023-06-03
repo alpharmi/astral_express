@@ -41,7 +41,7 @@ export default async function handler(req, res) {
                 formattedData.characters.push(formattedCharacter)
             })
 
-            playerData.info = {
+            formattedData.info = {
                 charactersOwned: playerData.PlayerSpaceInfo.AvatarCount,
                 achievementCount: playerData.PlayerSpaceInfo.AchievementCount
             }
