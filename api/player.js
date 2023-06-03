@@ -13,6 +13,7 @@ export default async function handler(req, res) {
             formattedData.name = playerData.player.name
             formattedData.level = playerData.player.level
             formattedData.signature = playerData.player.signature
+            formattedData.avatar = playerData.player.icon.split("/")[2].slice(0, -4)
             formattedData.characters = []
 
             playerData.characters.forEach(character => {
@@ -39,6 +40,11 @@ export default async function handler(req, res) {
 
                 formattedData.characters.push(formattedCharacter)
             })
+
+            playerData.info = {
+                charactersOwned: playerData.PlayerSpaceInfo.AvatarCount,
+                achievementCount: playerData.PlayerSpaceInfo.AchievementCount
+            }
         }
     }
 

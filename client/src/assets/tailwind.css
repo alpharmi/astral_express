@@ -197,6 +197,62 @@ html {
 
 .honkai {
     font-family: "Honkai";
+    text-shadow: 0 2px 1px#1f1f1f70;
+}
+
+.honkai 
+
+.absolute-center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.absolute-corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bg-character {
+    bottom: 8rem;
+    left: 50%;
+    filter: contrast(0.9);
+    transform: translateX(-50%);
+}
+
+.bg-character-reflection {
+    bottom: 8rem;
+    left: 50%;
+    transform: rotateX(180deg) translateX(-50%) translateY(-95%);
+    mask-image: linear-gradient(white 10%, transparent 95%);
+    filter: blur(1px);
+}
+
+.bg-character-shadow-behind {
+    bottom: 8rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-15%);
+    filter: brightness(0) blur(2px);
+    mask-image: linear-gradient(transparent 20%, white 150%);
+    opacity: 70%;
+}
+
+.bg-character-shadow-left {
+    bottom: 8rem;
+    left: 50%;
+    filter: brightness(0) blur(5px);
+    mask-image: linear-gradient(transparent 40%, white 120%);
+    transform: rotateX(70deg) rotateZ(-110deg) translateX(-205%) translateY(-127%) skewX(10deg);
+    opacity: 70%;
+}
+
+.bg-character-shadow-right {
+    bottom: 8rem;
+    left: 50%;
+    filter: brightness(0) blur(5px);
+    mask-image: linear-gradient(transparent 40%, white 120%);
+    transform: rotateX(70deg) rotateZ(110deg) translateX(245%) translateY(-70%) skewX(-10deg);
+    opacity: 70%;
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {

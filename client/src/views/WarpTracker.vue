@@ -1,18 +1,23 @@
 <template>
     <div class="flex flex-col gap-2 w-full">
         <div class="flex justify-between items-center">
-            <div>
-                <h1 class="text-4xl pb-2 text-title font-bold">Warp Tracker</h1>
-                <p>Track the amount of warps you've made, and how <br> many are needed until your next 5 star.</p>
+            <div class="flex flex-col">
+                <div>
+                    <h1 class="text-4xl pb-2 text-title font-bold">Warp Tracker</h1>
+                    <p>Track the amount of warps you've made, and how <br> many are needed until your next 5 star.</p>
+                </div>
+                <Note messages="The following page has yet to been optimised for smaller screen devices/windows.,The following page still has features in-development."/>
             </div>
-            <button @click="redirect('/warp/import')" class="button p-3 px-20 font-bold text-xl">Import</button>
+            <div class="flex flex-col gap-2">
+                <button @click="redirect('/warp/import')" class="button p-3 px-20 font-bold text-xl inline-image justify-center items-center"><img src="/images/other/import.png">Import</button>
+                <button @click="redirect('/warp/global')" class="button p-3 px-20 font-bold text-xl inline-image justify-center items-center"><img src="/images/other/earth.png">Global Stats</button>
+            </div>
         </div>
-        <Note messages="The following page has yet to been optimised for smaller screen devices/windows.,The following page still has features in-development."/>
         <Split/>
         <div class="flex flex-row gap-10">
             <div class="w-40 min-w-[10rem] flex flex-col gap-2 child:drop-shadow-2xl child:transition-all child:duration-75">
                 <button @click="switchBanner('character')" :class="[{'pl-0': banner == 'character'}, {'pl-8': banner != 'character'}]"><img :src="`/images/tickets/${currentBanner}.png`"></button>
-                <button @click="switchBanner('light_cone')" :class="[{'pl-0': banner == 'light_cone'}, {'pl-8': banner != 'light_cone'}]"><img :src="`/images/tickets/lightCone_${currentBanner}.png`"></button>
+                <button @click="switchBanner('light_cone')" :class="[{'pl-0': banner == 'light_cone'}, {'pl-8': banner != 'light_cone'}]"><img :src="`/images/tickets/${currentBanner}_lightCone.png`"></button>
                 <button @click="switchBanner('regular')" :class="[{'pl-0': banner == 'regular'}, {'pl-8': banner != 'regular'}]"><img src="/images/other/regularWarp.png"></button>
             </div>
             <div v-if="!warps" class="bgcontainer w-full h-[19rem] flex flex-col justify-center items-center">
@@ -82,12 +87,11 @@
 
 <script>
     const days = {0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat"}
-    const currentBanner = "swirl_of_heavenly_spear"
 
     export default {
         data() {
             return {
-                currentBanner: currentBanner,
+                currentBanner: "swirl_of_heavenly_spear",
                 warps: null,
                 banner: "character",
                 pulls: {
