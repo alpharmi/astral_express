@@ -91,7 +91,7 @@
     export default {
         data() {
             return {
-                currentBanner: "swirl_of_heavenly_spear",
+                currentBanner: "contract_zero",
                 warps: null,
                 banner: "character",
                 pulls: {
