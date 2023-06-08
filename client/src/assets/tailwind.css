@@ -23,6 +23,10 @@
     --container: #10101dd0;
     --title: #d3bc8e;
     --description: #9393b4;
+
+    --showcase-title: #505050;
+    --showcase-info: #8c6148;
+
     --legendary: #ffb13f;
     --rare: #d28fd6;
 
@@ -197,7 +201,11 @@ html {
 
 .honkai {
     font-family: "Honkai";
-    text-shadow: 0 2px 1px#1f1f1f70;
+}
+
+.honkai-dropshadow {
+    font-family: "Honkai";
+    text-shadow: 0 2px 1px#1f1f1f90;
 }
 
 .honkai 

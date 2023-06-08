@@ -12,6 +12,8 @@ module.exports = {
         "container": "var(--container)",
         "title": "var(--title)",
         "description": "var(--description)",
+        "showcase-title": "var(--showcase-title)",
+        "showcase-value": "var(--showcase-value)",
         "legendary": "var(--legendary)",
         "rare": "var(--rare)",
         "pink": "var(--pink)"
