@@ -75,6 +75,7 @@
                                     <th class="w-[12.5rem] pl-5 text-sm font-mono">{{ timeToDay(warp[3]) }}</th>
                                     <th :style="`color: hsl(${warp[6]},100%,70%)`" class="text-center pr-2">{{ warp[5] }}</th>
                                     <th class="inline-image gap-3 capitalize"><img :class="[{'scale-[1.5]': warp[2] == 'light_cone'}, {'scale-[2]': warp[2] == 'character'}]" :src="`/images/${warp[2]}/${warp[1]}.webp`"/>{{ warp[1].replaceAll("_", " ") }}</th>
+                                    <th><Tooltip v-if="warp[7]" :message="warp[7] == 1 && 'Lost 50:50' || warp[7] == 2 && 'Guaranteed' || 'Won 50:50'" :icon="warp[7] == 1 && 'starRed' || warp[7] == 2 && 'starEmpty' || 'star'"/></th>
                                 </tr>
                             </table>
                         </div>
@@ -147,6 +148,7 @@
 <script setup>
     import Note from "../components/Note.vue"
     import Split from "../components/Split.vue"
+    import Tooltip from "../components/Tooltip.vue"
     import WarpHistory from "../components/WarpTracker/WarpHistory.vue"
 
     import * as vueRouter from "vue-router"

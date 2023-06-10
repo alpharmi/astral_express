@@ -28,6 +28,7 @@
 
 <script>
     import rarities from "../data/rarities.json"
+    import standardWarps from "../data/standardWarps.json"
 
     export default {
         data() {
@@ -72,6 +73,7 @@
                     }
                     const amount = {}
                     const bannerLength = bannerData.length
+                    var legendaryPity = false
 
                     for (const [i, warp] of Object.entries(bannerData).reverse()) {
                         const rarity = rarities[warp[1]]
@@ -101,6 +103,20 @@
                                         warp[6] = 90 - Math.ceil((100 * warpPity) / 90)
                                     } else {
                                         warp[6] = 80 - Math.ceil((100 * warpPity) / 80)
+                                    }
+
+                                    if (id != 1) {
+                                        if (standardWarps.includes(warp[1])) {
+                                            legendaryPity = true
+                                            warp[7] = 1
+                                        } else {
+                                            if (legendaryPity) {
+                                                warp[7] = 2
+                                                legendaryPity = false
+                                            } else {
+                                                warp[7] = 3
+                                            }
+                                        }
                                     }
                                 } else if (rarity == "rare") {
                                     warp[6] = (10 - warpPity) * 10
@@ -132,7 +148,7 @@
                         lifetime: bannerLength,
                         lastId: bannerData[0][0],
                         monthlyPulls: amount,
-                        version: 1
+                        version: 1.1
                     }
 
                     return formattedData
@@ -156,7 +172,7 @@
                             var banner = JSON.parse(localStorage.getItem("warps_" + gachaType))
 
                             if (!banner) {
-                                banner = {data: [], pity: [0, 0], lifetime: 0, lastId: 0, monthlyPulls: [], version: 1}
+                                banner = {data: [], pity: [0, 0], lifetime: 0, lastId: 0, monthlyPulls: [], version: 1.1}
                                 localStorage.setItem("warps_" + gachaType, JSON.stringify(banner))
                             }
 
@@ -183,6 +199,7 @@
 <script setup>
     import * as vueRouter from "vue-router"
 
+    import Note from "../components/Note.vue"
     import Split from "../components/Split.vue"
     import Instruction from "../components/WarpTracker/Instruction.vue"
 

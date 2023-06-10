@@ -48,7 +48,7 @@
                     <p class="flex flex-row gap-1">Soft Pity: <span class="text-title">{{ soft_pity }}</span>
                         <Tooltip v-if="banner_type" 
                         message="This value is pure speculation. 
-                        Confirmed values have yet to be discovered."/>
+                        Confirmed values have yet to be discovered." icon="warning"/>
                     </p>
                     <p>Hard Pity: <span class="text-title">{{ hard_pity }}</span></p>
                 </div>
@@ -56,12 +56,12 @@
                     <p class="inline-image">Chance of 5 <img src="/images/other/star.png"> Warp in next {{ banner_type_name }} pull: <span class="text-title pl-1">{{ next_pull }}%</span>
                         <Tooltip v-if="banner_type" 
                         message="This percentage is pure speculation. 
-                        Confirmed values have yet to be discovered."/>
+                        Confirmed values have yet to be discovered." icon="warning"/>
                     </p>
                     <p class="inline-image">Chance of 5 <img src="/images/other/star.png"> Warp in next {{ banner_type_name }} 10 pull: <span class="text-title pl-1">{{ next_10_pull }}%</span>
                         <Tooltip v-if="banner_type" 
                         message="This percentage is pure speculation. 
-                        Confirmed values have yet to be discovered."/>
+                        Confirmed values have yet to be discovered." icon="warning"/>
                     </p>
                 </div>
             </div>
