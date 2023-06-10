@@ -1,5 +1,7 @@
 node_modules
 dev
 client/public/images/other/temp
+client/src/views/Player.vue
+client/src/views/PlayerFull.vue
 .env
 .vscode
