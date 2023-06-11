@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"nodemon dev/server.js \" \"cd client && vite\"", 
+    "dev": "concurrently \"nodemon dev/index.js \" \"cd client && vite\"", 
     "build": "cd client && vite build"
   },
   "dependencies": {
