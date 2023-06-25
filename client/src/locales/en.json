@@ -1,5 +1,18 @@
 {
     "app": {
         "test": "test"
-    }
+    },
+		"home": {
+			"title": "Welcome to astral express",
+			"desc":"Multipurpose tool that currently includes to help with your Honkai Adventures. Currently includes warp history, warp calculator, and general game information.Please note everything is",
+			"desc2":" still in development."
+		},
+		"wc":{
+			"title": "Warp Calculator",
+			"desc":"Calculate the amount of warps needed to hit your next soft or hard pity. Includes the option to switch between Character and Light Cone banners."
+		},
+		"wh":{
+			"title": "Warp History",
+			"desc": "Import your warp history to view your latest and previous pulls for Character, Light Cone, and Regular banners."
+		}
 }
