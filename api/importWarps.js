@@ -20,6 +20,11 @@ export default async function handler(req, res) {
     var warps = []
 
     if (authkey && region && gachaType && lastId) {
+				console.log("authkey: " + authkey)
+				console.log("region: " + region)
+				console.log("gachaType: " + gachaType)
+				console.log("lastId: " + lastId)
+				
         const query = takumiQuery
         var last_id = 0
         var latest = true
@@ -27,13 +32,11 @@ export default async function handler(req, res) {
         query.set("authkey", authkey)
         query.set("region", region)
         query.set("gacha_type", gachaType)
-
         while (true) {
             query.set("end_id", last_id)
 
             const warpData = await fetch("https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog?" + query).then(response => response.json())
             //const warpData = null
-
             if (warpData && warpData.data) {
                 const listLength = warpData.data.list.length - 1
 
