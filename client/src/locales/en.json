@@ -5,7 +5,11 @@
 		"home": {
 			"title": "Welcome to astral express",
 			"desc":"Multipurpose tool that currently includes to help with your Honkai Adventures. Currently includes warp history, warp calculator, and general game information.Please note everything is",
-			"desc2":" still in development."
+			"desc2":" still in development.",
+			"newDesc":{
+				"intro": "still in development.",
+				"content": "Multipurpose tool that currently includes to help with your Honkai Adventures. Currently includes warp history, warp calculator, and general game information. Please note everything is {0}"
+			}
 		},
 		"wc":{
 			"title": "Warp Calculator",
@@ -13,6 +17,59 @@
 		},
 		"wh":{
 			"title": "Warp History",
-			"desc": "Import your warp history to view your latest and previous pulls for Character, Light Cone, and Regular banners."
+			"desc": "Import your warp history to view your latest and previous pulls for Character, Light Cone, and Regular banners.",
+			"innerTitle":"Warp Tracker",
+			"intro": "Track the amount of warps you've made, and how <br> many are needed until your next 5 star.",
+			"tips": "The following page has yet to been optimised for smaller screen devices/windows.,The following page still has features in-development.",
+			"menu":{
+				"import":"Import",
+				"globalStatus":"Global Status"
+			},
+			"guaranteed90":"Guaranteed at 90",
+			"guaranteed10":"Guaranteed at 10",
+			"record":{
+				"time":"Time",
+				"pity": "Pity",
+				"name": "Name"
+			},
+			"pity": "pity",
+			"emptyData": "No warp data found.",
+			"emptyDataHint":"Click the import button to start.",
+			"lifetimePulls": "Lifetime Pulls",
+			"warpBannerTitle":{
+				"character": "Character Warp",
+				"lightcone": "Light Cone Warp",
+				"regular": "Regular Warp"
+			},
+			"characterWarp":"Character Warp",
+			"lightConeWarp":"Light Cone Warp",
+			"Regular Warp": "Regular Warp"
+		},
+		"import":{
+			"title": "Import Warps",
+			"button": "Import",
+			"desc":"Follow the steps below to import your warp history<br>from Honkai: Star Rail.",
+			"step1":"Open Honkai: Star Rail on PC.",
+			"step2":"Open your Warp History and go to the Records tab.",
+			"step3":"Open Windows PowerShell and paste the following command.",
+			"step4":{
+				"title":"Paste the URL that was copied into the box below.",
+				"placeholder": "Paste warp URL here"
+			},
+			"importing":{
+				"title": "Importing...",
+				"warps": "Warps: ",
+				"hint": "Please be patient, this may take awhile."
+			}
+		},
+		"footer":{
+			"title": "astral-express.test",
+			"desc":"Honkai: Star Rail and it's respective content are trademarks and copyright of HoYoverse.",
+			"contribution": {
+				"hoyolab":"wiki.hoyolab.com",
+				"paimon":"paimon.moe",
+				"sendou":"sendou.ink",
+				"desc":"Design inspired by {0}, {1}, and {2}"
+			}
 		}
 }

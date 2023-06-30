@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col pb-3 w-full justify-center text-center pt-10">
-        <p>astral-express.test</p>
-        <p>Honkai: Star Rail and it's respective content are trademarks and copyright of HoYoverse.</p>
+    <div class="flex flex-col pb-3 w-full justify-center text-center pt-10">		
+        <p>{{ $t('footer.title') }}</p>
+        <p>{{ $t('footer.desc') }}</p>
         <p >Design inspired by <a class="link" href="https://wiki.hoyolab.com/">wiki.hoyolab.com</a>, <a class="link" href="https://paimon.moe/" target="_blank" rel="noopener noreferrer">paimon.moe</a>, and <a class="link" target="_blank" rel="noopener noreferrer" href="https://spl2.sendou.ink/">sendou.ink</a></p>
         <div class="flex flex-row justify-center py-2 gap-3">
             <a href="https://github.com/alpharmi/astral_express" class="button px-4 py-2 flex">
