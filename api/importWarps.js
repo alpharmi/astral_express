@@ -20,11 +20,6 @@ export default async function handler(req, res) {
     var warps = []
 
     if (authkey && region && gachaType && lastId) {
-				console.log("authkey: " + authkey)
-				console.log("region: " + region)
-				console.log("gachaType: " + gachaType)
-				console.log("lastId: " + lastId)
-				
         const query = takumiQuery
         var last_id = 0
         var latest = true
@@ -60,7 +55,6 @@ export default async function handler(req, res) {
         }
     }
 
-    console.log(gachaType, warps.length)
 
     res.json(warps)
 }
