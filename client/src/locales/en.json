@@ -67,6 +67,10 @@
 				"dailyTraining": "Daily Training",
 				"hertaSimulatedUniverse": "Herta's Simulated Universe",
 				"expressSupplyPass": "Express Supply Pass"
+			},
+			"words":{
+				"exchange": "Exchange",
+				"previous": "Previous"
 			}
 		},
 		"wh":{

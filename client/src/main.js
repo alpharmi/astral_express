@@ -32,7 +32,7 @@ const router = VueRouter.createRouter({
 })
 
 const i18n = createI18n({
-	locale: "zhCN",
+	locale: "en",
 	fallbackLocale: "en",
     messages
 })

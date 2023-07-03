@@ -41,9 +41,23 @@
     },
     "innerDesc": "计算您获得下一次4星或5星需要多少星琼。",
     "5StarChance": {
-      "content": "下一个角色 {message} 抽中有 5 {image} 的概率：{value}"
+      "content": "下一个角色 {message} 抽中有 5 {image} 的概率：{value}",
+      "head": "5的机会",
+      "mid": "下一个变形",
+      "tail": "拉："
     },
-    "tooltipMessage": "此概率仅供参考。"
+    "tooltipMessage": "此概率仅供参考。",
+    "prefix": {
+      "exchange": "交换"
+    },
+    "starrailPass": "星轨通票",
+    "suffix": {
+      "previous": "以前的"
+    },
+    "words": {
+      "exchange": "交换",
+      "previous": "以前的"
+    }
   },
   "wh": {
     "desc": "导入您的历史记录以查看您最新和以前的角色、光锥和常驻卡池的跃迁记录。",

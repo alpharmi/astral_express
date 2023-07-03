@@ -47,7 +47,17 @@
       "undyingStarLight": "未熄的星芒",
       "warps": "躍遷"
     },
-    "tooltipMessage": "此概率僅供參考。"
+    "tooltipMessage": "此概率僅供參考。",
+    "prefix": {
+      "exchange": "交換"
+    },
+    "suffix": {
+      "previous": "以前的"
+    },
+    "words": {
+      "exchange": "交換",
+      "previous": "以前的"
+    }
   },
   "wh": {
     "desc": "導入您的歷史記錄以查看您最新和以前的角色、光錐和常駐卡池的躍遷記錄。",

@@ -35,10 +35,10 @@
                     <p class="text-xl"><span class="text-title">{{ total_star_rail_passes }}x</span> {{ $t('valuables.starRailSpecialPass') }}</p>
                     <div class="pl-5">
                         <p>+ <span class="text-title">{{ star_rail_special_pass }}x</span> {{ $t('wc.terms.owned') }}</p>
-                        <p>+ <span class="text-title">{{ current_pity }}x</span> {{ $t('wc.prefix.previous') + " " + $t('wc.terms.warps') }}</p>
-                        <p>+ <span class="text-title">{{ jade_passes }}x</span> {{ $t('wc.terms.stellarJade') + " " + $t('wc.suffix.exchange') }}</p>
-                        <p>+ <span class="text-title">{{ undying_embers_passes }}x</span> {{ $t('wc.terms.undyingEmbers') + " " + $t('wc.suffix.exchange') }}</p>
-                        <p>+ <span class="text-title">{{ undying_starlight_passes }}x</span> {{ $t('wc.terms.undyingStarLight') + " " + $t('wc.suffix.exchange') }}</p>
+                        <p>+ <span class="text-title">{{ current_pity }}x</span> {{ $t('wc.words.previous') + " " + $t('wc.terms.warps') }}</p>
+                        <p>+ <span class="text-title">{{ jade_passes }}x</span> {{ $t('wc.terms.stellarJade') + " " + $t('wc.words.exchange') }}</p>
+                        <p>+ <span class="text-title">{{ undying_embers_passes }}x</span> {{ $t('wc.terms.undyingEmbers') + " " + $t('wc.words.exchange') }}</p>
+                        <p>+ <span class="text-title">{{ undying_starlight_passes }}x</span> {{ $t('wc.terms.undyingStarLight') + " " + $t('wc.words.exchange') }}</p>
                         <p>+ <span class="text-title">{{ star_4_refund_passes }}x</span> {{ $t('wc.phrases.fourStarRefund') }}</p>
                     </div>
                 </div>

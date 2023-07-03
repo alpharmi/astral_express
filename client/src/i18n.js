@@ -1,6 +1,8 @@
 import en from "./locales/en.json"
 import zhCN from "./locales/zh-cn.json"
+import zhTW from './locales/zh-TW.json'
 export default {
     en,
-		zhCN
+		zhCN,
+		zhTW
 }
