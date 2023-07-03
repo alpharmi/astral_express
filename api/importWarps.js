@@ -27,13 +27,11 @@ export default async function handler(req, res) {
         query.set("authkey", authkey)
         query.set("region", region)
         query.set("gacha_type", gachaType)
-
         while (true) {
             query.set("end_id", last_id)
 
             const warpData = await fetch("https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog?" + query).then(response => response.json())
             //const warpData = null
-
             if (warpData && warpData.data) {
                 const listLength = warpData.data.list.length - 1
 
@@ -57,7 +55,6 @@ export default async function handler(req, res) {
         }
     }
 
-    console.log(gachaType, warps.length)
 
     res.json(warps)
 }

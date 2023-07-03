@@ -3,14 +3,15 @@
         <div class="flex justify-between items-center">
             <div class="flex flex-col">
                 <div>
-                    <h1 class="text-4xl pb-2 text-title font-bold">Warp Tracker</h1>
-                    <p>Track the amount of warps you've made, and how <br> many are needed until your next 5 star.</p>
+                    <h1 class="text-4xl pb-2 text-title font-bold">{{$t('wh.innerTitle')}}</h1>
+                    <p v-html="$t('wh.intro')"></p>
                 </div>
-                <Note messages="The following page has yet to been optimised for smaller screen devices/windows.,The following page still has features in-development."/>
+                <!-- <Note messages="The following page has yet to been optimised for smaller screen devices/windows.,The following page still has features in-development."/> -->
+								<Note :messages="$t('wh.tips')"></Note> 
             </div>
             <div class="flex flex-col gap-2">
-                <button @click="redirect('/warp/import')" class="button p-3 px-20 font-bold text-xl inline-image justify-center items-center"><img src="/images/other/import.png">Import</button>
-                <button @click="redirect('/warp/global')" class="button p-3 px-20 font-bold text-xl inline-image justify-center items-center"><img src="/images/other/earth.png">Global Stats</button>
+                <button @click="redirect('/warp/import')" class="button p-3 px-20 font-bold text-xl inline-image justify-center items-center"><img src="/images/other/import.png">{{$t('wh.menu.import')}}</button>
+                <button @click="redirect('/warp/global')" class="button p-3 px-20 font-bold text-xl inline-image justify-center items-center"><img src="/images/other/earth.png">{{$t('wh.menu.globalStatus')}}</button>
             </div>
         </div>
         <Split/>
@@ -21,32 +22,32 @@
                 <button @click="switchBanner('regular')" :class="[{'pl-0': banner == 'regular'}, {'pl-8': banner != 'regular'}]"><img src="/images/other/regularWarp.png"></button>
             </div>
             <div v-if="!warps" class="bgcontainer w-full h-[19rem] flex flex-col justify-center items-center">
-                <p class="text-description">No warp data found.</p>
-                <p class="text-title text-2xl">Click the import button to start.</p>
+                <p class="text-description">{{ $t('wh.emptyData') }}</p>
+                <p class="text-title text-2xl">{{ $t('wh.emptyDataHint') }}</p>
             </div>
             <div v-if="warps">
-                <h1 class="text-xl pb-2 text-title capitalize">{{ banner.replace("_", " ") }} Warp</h1>
+                <h1 class="text-xl pb-2 text-title capitalize">{{ $t(`wh.warpBannerTitle.${banner.replace('_','')}`) }} </h1>
                 <div class="flex flex-col gap-5">
                     <div class="flex flex-row gap-5">
                         <div class="flex flex-col gap-2 w-72">
                             <div class="bgcontainer p-2 flex flex-row justify-between items-center">
                                 <div>
-                                    <p class="text-title">Lifetime Pulls</p>
+                                    <p class="text-title">{{$t('wh.lifetimePulls')}}</p>
                                     <span class="text-description inline-image"><img src="/images/other/stellar_jade.webp"/>{{ (160 * pulls.lifetime).toLocaleString() }}</span>
                                 </div>
                                 <p class="text-4xl">{{ pulls.lifetime }}</p>
                             </div>
                             <div class="bgcontainer p-2 flex flex-row justify-between items-center">
                                 <div>
-                                    <p class="text-title inline-image">5<img src="/images/other/star.png"> Pity</p>
-                                    <span class="text-description inline-image">Guaranteed at 90</span>
+                                    <p class="text-title inline-image">5<img src="/images/other/star.png"> {{$t('wh.pity')}}</p>
+                                    <span class="text-description inline-image">{{$t('wh.guaranteed90')}}</span>
                                 </div>
                                 <p class="text-4xl text-legendary">{{ pulls.legendary }}</p>
                             </div>
                             <div class="bgcontainer p-2 flex flex-row justify-between items-center">
                                 <div>
-                                    <p class="text-title inline-image">4<img src="/images/other/star.png"> Pity</p>
-                                    <span class="text-description inline-image">Guaranteed at 10</span>
+                                    <p class="text-title inline-image">4<img src="/images/other/star.png"> {{$t('wh.pity')}}</p>
+                                    <span class="text-description inline-image">{{$t('wh.guaranteed10')}}</span>
                                 </div>
                                 <p class="text-4xl text-rare">{{ pulls.rare }}</p>
                             </div>
@@ -67,11 +68,11 @@
                             </div>
                             <table class="w-full text-left">
                                 <tr class="text-title child:font-normal">
-                                    <th class="pl-5">Time</th>
-                                    <th class="text-center">Pity</th>
-                                    <th>Name</th>
+                                    <th class="pl-5"> {{$t('wh.record.time')}} </th>
+                                    <th class="text-center">{{$t('wh.record.pity')}}</th>
+                                    <th>{{$t('wh.record.name')}}</th>
                                 </tr>
-                                <tr v-for="warp in warps" :class="'warp-' + warp[4]" class="border-t border-gray-900 child:font-normal child:py-2">
+                                <tr v-for="(warp, index) in warps" :key="index" :class="'warp-' + warp[4]" class="border-t border-gray-900 child:font-normal child:py-2">
                                     <th class="w-[12.5rem] pl-5 text-sm font-mono">{{ timeToDay(warp[3]) }}</th>
                                     <th :style="`color: hsl(${warp[6]},100%,70%)`" class="text-center pr-2">{{ warp[5] }}</th>
                                     <th class="inline-image gap-3 capitalize"><img :class="[{'scale-[1.5]': warp[2] == 'light_cone'}, {'scale-[2]': warp[2] == 'character'}]" :src="`/images/${warp[2]}/${warp[1]}.webp`"/>{{ warp[1].replaceAll("_", " ") }}</th>
