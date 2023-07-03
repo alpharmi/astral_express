@@ -72,7 +72,7 @@
                                     <th class="text-center">{{$t('wh.record.pity')}}</th>
                                     <th>{{$t('wh.record.name')}}</th>
                                 </tr>
-                                <tr v-for="warp in warps" :class="'warp-' + warp[4]" class="border-t border-gray-900 child:font-normal child:py-2">
+                                <tr v-for="(warp, index) in warps" :key="index" :class="'warp-' + warp[4]" class="border-t border-gray-900 child:font-normal child:py-2">
                                     <th class="w-[12.5rem] pl-5 text-sm font-mono">{{ timeToDay(warp[3]) }}</th>
                                     <th :style="`color: hsl(${warp[6]},100%,70%)`" class="text-center pr-2">{{ warp[5] }}</th>
                                     <th class="inline-image gap-3 capitalize"><img :class="[{'scale-[1.5]': warp[2] == 'light_cone'}, {'scale-[2]': warp[2] == 'character'}]" :src="`/images/${warp[2]}/${warp[1]}.webp`"/>{{ warp[1].replaceAll("_", " ") }}</th>

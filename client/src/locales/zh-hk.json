@@ -1,0 +1,132 @@
+{
+  "app": {
+    "test": "測試"
+  },
+  "home": {
+    "desc": "目前包括幫助您進行崩壞冒險的多用途工具。\n\n目前包括變形歷史記錄、變形計算器和一般遊戲信息。\n請注意，所有內容均",
+    "desc2": "仍在開發中。",
+    "title": "歡迎來到Astral Express",
+    "newDesc": {
+      "content": "目前包括幫助您進行崩壞冒險的多用途工具。\n\n目前包括躍遷歷史、躍遷計算器和一般遊戲信息。\n\n請注意一切都是{0}",
+      "intro": "仍在開發中。"
+    }
+  },
+  "wc": {
+    "desc": "計算命中下一個大保底或小保底所需的抽數。\n\n包括在角色池和光錐池之間切換的選項。",
+    "title": "躍遷計算器",
+    "5StarChance": {
+      "content": "下一個角色 {message} 抽中有 5 {image} 的概率：{value}",
+      "head": "",
+      "mid": "",
+      "tail": ""
+    },
+    "innerDesc": "計算您獲得下一次4星或5星需要多少星瓊。",
+    "innerTitle": "計算器",
+    "phrases": {
+      "bannerType": "卡池類型",
+      "currentPity": "抽取目標",
+      "daysUntilPull": "距離抽出的天數",
+      "expressSupplyPass": "快速補給通行證",
+      "fourStarRefund": "4星返還",
+      "hardPity": "大保底",
+      "lightCone": "光錐",
+      "refund4Stars": "返還4星",
+      "refundFourStars": "返還4星",
+      "softPity": "小保底",
+      "warpInNextCharacterPull": "下一個角色抽時躍遷"
+    },
+    "starrailPass": "",
+    "terms": {
+      "dailyTraining": "日常訓練",
+      "expressSupplyPass": "快速補給通行證",
+      "hertaSimulatedUniverse": "黑塔的模擬宇宙",
+      "oneiricShard": "古老夢華",
+      "owned": "擁有",
+      "stellarJade": "星瓊",
+      "undyingEmbers": "未熄的餘燼",
+      "undyingStarLight": "未熄的星芒",
+      "warps": "躍遷"
+    },
+    "tooltipMessage": "此概率僅供參考。"
+  },
+  "wh": {
+    "desc": "導入您的歷史記錄以查看您最新和以前的角色、光錐和常駐卡池的躍遷記錄。",
+    "title": "躍遷歷史",
+    "Regular Warp": "常規躍遷",
+    "characterWarp": "角色躍遷",
+    "emptyData": "未找到躍遷數據。",
+    "emptyDataHint": "單擊導入按鈕開始。",
+    "guaranteed10": "10抽必出4星角色或光錐",
+    "guaranteed90": "90抽必出5星角色或光錐",
+    "innerTitle": "躍遷追踪器",
+    "intro": "跟踪您已完成的躍遷數量，以及在獲得下一個 5 星之前還需要<br>多少抽。",
+    "lifetimePulls": "生涯總數",
+    "lightConeWarp": "光錐躍遷",
+    "menu": {
+      "globalStatus": "全球數據",
+      "import": "導入"
+    },
+    "pity": "保底",
+    "record": {
+      "name": "名稱",
+      "pity": "保底",
+      "time": "時間"
+    },
+    "tips": "以下頁面尚未針對較小屏幕設備/窗口進行優化。 \n,以下頁面仍有正在開發中的功能。",
+    "warpBannerTitle": {
+      "character": "角色活動躍遷",
+      "lightcone": "光錐活動躍遷",
+      "regular": "常駐躍遷"
+    }
+  },
+  "currency": {
+    "oneiricShard": "古老夢華",
+    "stellarJade": "星瓊",
+    "undyingEmbers": "未熄的餘燼",
+    "undyingStarlight": "未熄的星芒"
+  },
+  "footer": {
+    "contribution": {
+      "desc": "設計靈感源自 {0}、{1} 和 {2}",
+      "hoyolab": "wiki.hoyolab.com",
+      "paimon": "派蒙萌",
+      "sendou": "仙道墨水"
+    },
+    "desc": "崩壞：星穹鐵道及其相關內容是米哈遊的商標和版權。",
+    "title": "astral-express.測試"
+  },
+  "import": {
+    "button": "導入",
+    "desc": "請按照以下步驟從《崩壞：星軌》導入您的躍遷歷史記錄。",
+    "importing": {
+      "hint": "請耐心等待，這可能需要一段時間。",
+      "title": "輸入...",
+      "warps": "躍遷次數："
+    },
+    "step1": "在 PC 上打開《崩壞：星軌》。",
+    "step2": "打開您的躍遷歷史並轉到“記錄”選項卡。",
+    "step3": "打開 Windows PowerShell 並粘貼以下命令。",
+    "step4": {
+      "placeholder": "將生成的URL 粘貼到此處",
+      "title": "將生成的 URL 粘貼到下面的框中。"
+    },
+    "title": "導入躍遷歷史記錄"
+  },
+  "monetization": {
+    "expressSupplyPass": "列車補給憑證",
+    "namelessHonor": "無名勳禮",
+    "warp": "躍遷"
+  },
+  "terms": {
+    "character": "角色",
+    "hardPity": "大保底",
+    "lightCone": "光錐",
+    "softPity": "小保底"
+  },
+  "valuables": {
+    "starRailPass": "星軌通票",
+    "starRailSpecialPass": "星軌專票",
+    "starrailPass": "星軌通票",
+    "starrailSpecialPass": "星軌專票"
+  }
+}

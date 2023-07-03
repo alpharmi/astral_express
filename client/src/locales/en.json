@@ -2,6 +2,27 @@
     "app": {
         "test": "test"
     },
+		"currency":{
+			"stellarJade": "Stellar Jade",
+			"undyingEmbers": "Undying Embers",
+			"oneiricShard": "Oneiric Shard",
+			"undyingStarlight": "Undying Starlight"
+		},
+		"monetization":{
+			"expressSupplyPass": "Express Supply Pass",
+			"namelessHonor": "Nameless Honor",
+			"warp": "Warp"
+		},
+		"valuables":{
+			"starRailPass":"Star Rail Pass",
+			"starRailSpecialPass": "Star Rail Special Pass"
+		},
+		"terms":{
+			"character": "Character",
+			"lightCone": "Light Cone",	
+			"softPity": "Soft Pity",
+			"hardPity": "Hard Pity"
+		},
 		"home": {
 			"title": "Welcome to astral express",
 			"desc":"Multipurpose tool that currently includes to help with your Honkai Adventures. Currently includes warp history, warp calculator, and general game information.Please note everything is",
@@ -13,7 +34,40 @@
 		},
 		"wc":{
 			"title": "Warp Calculator",
-			"desc":"Calculate the amount of warps needed to hit your next soft or hard pity. Includes the option to switch between Character and Light Cone banners."
+			"desc":"Calculate the amount of warps needed to hit your next soft or hard pity. Includes the option to switch between Character and Light Cone banners.",
+			"innerTitle":"Calculator",
+			"innerDesc":"Calculate how many Stella Jades are required for your next 4/5 star pulls.",
+			"starrailPass": "Star Rail Pass",
+			"tooltipMessage":"This percentage is pure speculation. Confirmed values have yet to be discovered.",
+			"5StarChance":{
+				"content": "Chance of 5 {image} Warp in next {message} pull: {value}",
+				"head": "Chance of 5",
+				"mid": "Warp in next",
+				"tail": "pull: "
+			},
+			"phrases":{
+				"fourStarRefund": "4 Star Refund",
+				"refund4Stars": "Refund 4 Stars",
+				"softPity":"Soft Pity",
+				"hardPity":"Hard Pity",
+				"warpInNextCharacterPull": "Warp in next character pull",
+				"currentPity": "Current Pity",
+				"daysUntilPull": "Days until pull",
+				"expressSupplyPass": "Express Supply Pass",
+				"bannerType": "Banner Type",
+				"lightCone":"Light Cone"
+			},	
+			"terms":{
+				"stellarJade": "Stellar Jade",
+				"undyingEmbers": "Undying Embers",
+				"undyingStarLight": "Undying Starlight",
+				"warps": "Warps",
+				"owned": "Owned",
+				"oneiricShard": "Oneiric Shard",
+				"dailyTraining": "Daily Training",
+				"hertaSimulatedUniverse": "Herta's Simulated Universe",
+				"expressSupplyPass": "Express Supply Pass"
+			}
 		},
 		"wh":{
 			"title": "Warp History",

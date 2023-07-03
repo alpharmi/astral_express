@@ -13,7 +13,37 @@
   },
   "wc": {
     "desc": "计算命中下一个大保底或小保底所需的抽数。\n包括在角色池和光锥池之间切换的选项。",
-    "title": "跃迁计算器"
+    "title": "跃迁计算器",
+    "innerTitle": "计算器",
+    "phrases": {
+      "fourStarRefund": "4星返还",
+      "hardPity": "大保底",
+      "refundFourStars": "返还4星",
+      "softPity": "小保底",
+      "warpInNextCharacterPull": "下一个角色抽时跃迁",
+      "bannerType": "卡池类型",
+      "currentPity": "抽取目标",
+      "daysUntilPull": "距离抽出的天数",
+      "expressSupplyPass": "快速补给通行证",
+      "lightCone": "光锥",
+      "refund4Stars": "返还4星"
+    },
+    "terms": {
+      "dailyTraining": "日常训练",
+      "expressSupplyPass": "快速补给通行证",
+      "hertaSimulatedUniverse": "黑塔的模拟宇宙",
+      "oneiricShard": "古老梦华",
+      "owned": "拥有",
+      "stellarJade": "星琼",
+      "undyingEmbers": "未熄的余烬",
+      "undyingStarLight": "未熄的星芒",
+      "warps": "跃迁"
+    },
+    "innerDesc": "计算您获得下一次4星或5星需要多少星琼。",
+    "5StarChance": {
+      "content": "下一个角色 {message} 抽中有 5 {image} 的概率：{value}"
+    },
+    "tooltipMessage": "此概率仅供参考。"
   },
   "wh": {
     "desc": "导入您的历史记录以查看您最新和以前的角色、光锥和常驻卡池的跃迁记录。",
@@ -40,9 +70,9 @@
     "guaranteed10": "10抽必出4星角色或光锥",
     "guaranteed90": "90抽必出5星角色或光锥",
     "warpBannerTitle": {
-      "character": "角色扭曲",
-      "lightcone": "光锥扭曲",
-      "regular": "常规变形"
+      "character": "角色跃迁",
+      "lightcone": "光锥跃迁",
+      "regular": "常驻跃迁"
     }
   },
   "footer": {
@@ -52,7 +82,7 @@
       "paimon": "派蒙萌",
       "sendou": "仙道墨水"
     },
-    "desc": "崩坏：星轨及其各自的内容是 HoYoverse 的商标和版权。",
+    "desc": "崩坏：星穹铁道及其相关内容是米哈游的商标和版权。",
     "title": "astral-express.测试"
   },
   "import": {
@@ -71,5 +101,28 @@
       "title": "将生成的 URL 粘贴到下面的框中。"
     },
     "title": "导入跃迁历史记录"
+  },
+  "currency": {
+    "oneiricShard": "古老梦华",
+    "stellarJade": "星琼",
+    "undyingEmbers": "未熄的余烬",
+    "undyingStarlight": "未熄的星芒"
+  },
+  "terms": {
+    "character": "角色",
+    "lightCone": "光锥",
+    "hardPity": "大保底",
+    "softPity": "小保底"
+  },
+  "valuables": {
+    "starrailPass": "星轨通票",
+    "starrailSpecialPass": "星轨专票",
+    "starRailPass": "星轨通票",
+    "starRailSpecialPass": "星轨专票"
+  },
+  "monetization": {
+    "expressSupplyPass": "列车补给凭证",
+    "namelessHonor": "无名勋礼",
+    "warp": "跃迁"
   }
 }
