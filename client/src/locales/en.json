@@ -1,133 +1,133 @@
 {
-    "app": {
-        "test": "test"
+  "app": {
+    "test": "test"
+  },
+  "currency": {
+    "stellarJade": "Stellar Jade",
+    "undyingEmbers": "Undying Embers",
+    "oneiricShard": "Oneiric Shard",
+    "undyingStarlight": "Undying Starlight"
+  },
+  "monetization": {
+    "expressSupplyPass": "Express Supply Pass",
+    "namelessHonor": "Nameless Honor",
+    "warp": "Warp"
+  },
+  "valuables": {
+    "starRailPass": "Star Rail Pass",
+    "starRailSpecialPass": "Star Rail Special Pass"
+  },
+  "terms": {
+    "character": "Character",
+    "lightCone": "Light Cone",
+    "softPity": "Soft Pity",
+    "hardPity": "Hard Pity"
+  },
+  "home": {
+    "title": "Welcome to astral express",
+    "desc": "Multipurpose tool that currently includes to help with your Honkai Adventures. Currently includes warp history, warp calculator, and general game information.Please note everything is",
+    "desc2": " still in development.",
+    "newDesc": {
+      "intro": "still in development.",
+      "content": "Multipurpose tool that currently includes to help with your Honkai Adventures. Currently includes warp history, warp calculator, and general game information. Please note everything is {0}"
+    }
+  },
+  "wc": {
+    "title": "Warp Calculator",
+    "desc": "Calculate the amount of warps needed to hit your next soft or hard pity. Includes the option to switch between Character and Light Cone banners.",
+    "innerTitle": "Calculator",
+    "innerDesc": "Calculate how many Stella Jades are required for your next 4/5 star pulls.",
+    "starrailPass": "Star Rail Pass",
+    "tooltipMessage": "This percentage is pure speculation. Confirmed values have yet to be discovered.",
+    "5StarChance": {
+      "content": "Chance of 5 {image} Warp in next {message} pull: {value}",
+      "head": "Chance of 5",
+      "mid": "Warp in next",
+      "tail": "pull: "
     },
-		"currency":{
-			"stellarJade": "Stellar Jade",
-			"undyingEmbers": "Undying Embers",
-			"oneiricShard": "Oneiric Shard",
-			"undyingStarlight": "Undying Starlight"
-		},
-		"monetization":{
-			"expressSupplyPass": "Express Supply Pass",
-			"namelessHonor": "Nameless Honor",
-			"warp": "Warp"
-		},
-		"valuables":{
-			"starRailPass":"Star Rail Pass",
-			"starRailSpecialPass": "Star Rail Special Pass"
-		},
-		"terms":{
-			"character": "Character",
-			"lightCone": "Light Cone",	
-			"softPity": "Soft Pity",
-			"hardPity": "Hard Pity"
-		},
-		"home": {
-			"title": "Welcome to astral express",
-			"desc":"Multipurpose tool that currently includes to help with your Honkai Adventures. Currently includes warp history, warp calculator, and general game information.Please note everything is",
-			"desc2":" still in development.",
-			"newDesc":{
-				"intro": "still in development.",
-				"content": "Multipurpose tool that currently includes to help with your Honkai Adventures. Currently includes warp history, warp calculator, and general game information. Please note everything is {0}"
-			}
-		},
-		"wc":{
-			"title": "Warp Calculator",
-			"desc":"Calculate the amount of warps needed to hit your next soft or hard pity. Includes the option to switch between Character and Light Cone banners.",
-			"innerTitle":"Calculator",
-			"innerDesc":"Calculate how many Stella Jades are required for your next 4/5 star pulls.",
-			"starrailPass": "Star Rail Pass",
-			"tooltipMessage":"This percentage is pure speculation. Confirmed values have yet to be discovered.",
-			"5StarChance":{
-				"content": "Chance of 5 {image} Warp in next {message} pull: {value}",
-				"head": "Chance of 5",
-				"mid": "Warp in next",
-				"tail": "pull: "
-			},
-			"phrases":{
-				"fourStarRefund": "4 Star Refund",
-				"refund4Stars": "Refund 4 Stars",
-				"softPity":"Soft Pity",
-				"hardPity":"Hard Pity",
-				"warpInNextCharacterPull": "Warp in next character pull",
-				"currentPity": "Current Pity",
-				"daysUntilPull": "Days until pull",
-				"expressSupplyPass": "Express Supply Pass",
-				"bannerType": "Banner Type",
-				"lightCone":"Light Cone"
-			},	
-			"terms":{
-				"stellarJade": "Stellar Jade",
-				"undyingEmbers": "Undying Embers",
-				"undyingStarLight": "Undying Starlight",
-				"warps": "Warps",
-				"owned": "Owned",
-				"oneiricShard": "Oneiric Shard",
-				"dailyTraining": "Daily Training",
-				"hertaSimulatedUniverse": "Herta's Simulated Universe",
-				"expressSupplyPass": "Express Supply Pass"
-			},
-			"words":{
-				"exchange": "Exchange",
-				"previous": "Previous"
-			}
-		},
-		"wh":{
-			"title": "Warp History",
-			"desc": "Import your warp history to view your latest and previous pulls for Character, Light Cone, and Regular banners.",
-			"innerTitle":"Warp Tracker",
-			"intro": "Track the amount of warps you've made, and how <br> many are needed until your next 5 star.",
-			"tips": "The following page has yet to been optimised for smaller screen devices/windows.,The following page still has features in-development.",
-			"menu":{
-				"import":"Import",
-				"globalStatus":"Global Status"
-			},
-			"guaranteed90":"Guaranteed at 90",
-			"guaranteed10":"Guaranteed at 10",
-			"record":{
-				"time":"Time",
-				"pity": "Pity",
-				"name": "Name"
-			},
-			"pity": "pity",
-			"emptyData": "No warp data found.",
-			"emptyDataHint":"Click the import button to start.",
-			"lifetimePulls": "Lifetime Pulls",
-			"warpBannerTitle":{
-				"character": "Character Warp",
-				"lightcone": "Light Cone Warp",
-				"regular": "Regular Warp"
-			},
-			"characterWarp":"Character Warp",
-			"lightConeWarp":"Light Cone Warp",
-			"Regular Warp": "Regular Warp"
-		},
-		"import":{
-			"title": "Import Warps",
-			"button": "Import",
-			"desc":"Follow the steps below to import your warp history<br>from Honkai: Star Rail.",
-			"step1":"Open Honkai: Star Rail on PC.",
-			"step2":"Open your Warp History and go to the Records tab.",
-			"step3":"Open Windows PowerShell and paste the following command.",
-			"step4":{
-				"title":"Paste the URL that was copied into the box below.",
-				"placeholder": "Paste warp URL here"
-			},
-			"importing":{
-				"title": "Importing...",
-				"warps": "Warps: ",
-				"hint": "Please be patient, this may take awhile."
-			}
-		},
-		"footer":{
-			"title": "astral-express.test",
-			"desc":"Honkai: Star Rail and it's respective content are trademarks and copyright of HoYoverse.",
-			"contribution": {
-				"hoyolab":"wiki.hoyolab.com",
-				"paimon":"paimon.moe",
-				"sendou":"sendou.ink",
-				"desc":"Design inspired by {0}, {1}, and {2}"
-			}
-		}
+    "phrases": {
+      "fourStarRefund": "4 Star Refund",
+      "refund4Stars": "Refund 4 Stars",
+      "softPity": "Soft Pity",
+      "hardPity": "Hard Pity",
+      "warpInNextCharacterPull": "Warp in next character pull",
+      "currentPity": "Current Pity",
+      "daysUntilPull": "Days until pull",
+      "expressSupplyPass": "Express Supply Pass",
+      "bannerType": "Banner Type",
+      "lightCone": "Light Cone"
+    },
+    "terms": {
+      "stellarJade": "Stellar Jade",
+      "undyingEmbers": "Undying Embers",
+      "undyingStarLight": "Undying Starlight",
+      "warps": "Warps",
+      "owned": "Owned",
+      "oneiricShard": "Oneiric Shard",
+      "dailyTraining": "Daily Training",
+      "hertaSimulatedUniverse": "Herta's Simulated Universe",
+      "expressSupplyPass": "Express Supply Pass"
+    },
+    "words": {
+      "exchange": "Exchange",
+      "previous": "Previous"
+    }
+  },
+  "wh": {
+    "title": "Warp History",
+    "desc": "Import your warp history to view your latest and previous pulls for Character, Light Cone, and Regular banners.",
+    "innerTitle": "Warp Tracker",
+    "intro": "Track the amount of warps you've made, and how <br> many are needed until your next 5 star.",
+    "tips": "The following page has yet to been optimised for smaller screen devices/windows.,The following page still has features in-development.",
+    "menu": {
+      "import": "Import",
+      "globalStatus": "Global Status"
+    },
+    "guaranteed90": "Guaranteed at 90",
+    "guaranteed10": "Guaranteed at 10",
+    "record": {
+      "time": "Time",
+      "pity": "Pity",
+      "name": "Name"
+    },
+    "pity": "pity",
+    "emptyData": "No warp data found.",
+    "emptyDataHint": "Click the import button to start.",
+    "lifetimePulls": "Lifetime Pulls",
+    "warpBannerTitle": {
+      "character": "Character Warp",
+      "lightcone": "Light Cone Warp",
+      "regular": "Regular Warp"
+    },
+    "characterWarp": "Character Warp",
+    "lightConeWarp": "Light Cone Warp",
+    "Regular Warp": "Regular Warp"
+  },
+  "import": {
+    "title": "Import Warps",
+    "button": "Import",
+    "desc": "Follow the steps below to import your warp history<br>from Honkai: Star Rail.",
+    "step1": "Open Honkai: Star Rail on PC.",
+    "step2": "Open your Warp History and go to the Records tab.",
+    "step3": "Open Windows PowerShell and paste the following command.",
+    "step4": {
+      "title": "Paste the URL that was copied into the box below.",
+      "placeholder": "Paste warp URL here"
+    },
+    "importing": {
+      "title": "Importing...",
+      "warps": "Warps: ",
+      "hint": "Please be patient, this may take awhile."
+    }
+  },
+  "footer": {
+    "title": "astral-express.test",
+    "desc": "Honkai: Star Rail and it's respective content are trademarks and copyright of HoYoverse.",
+    "contribution": {
+      "hoyolab": "wiki.hoyolab.com",
+      "paimon": "paimon.moe",
+      "sendou": "sendou.ink",
+      "desc": "Design inspired by {0}, {1}, and {2}"
+    }
+  }
 }

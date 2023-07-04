@@ -1,18 +1,20 @@
 // https://eslint.vuejs.org/user-guide/
 {
-	"env":{
-		"browser": true
-	},
-	"files":{
-		"allow":[
-			"client/src/**/*"
-		]
-	},
-	"extends":[
-		"eslint:recommended",
-		"plugin:vue/vue3-essential"
-	],
-	"plugins": [
-		"vue"
-	]
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "overrides": [
+    {
+      "files": [
+        "client/src/**/*.{js,vue}"
+      ]
+    }
+  ],
+  "extends": [
+    "@antfu"
+  ],
+  "plugins": [
+    "vue"
+  ]
 }

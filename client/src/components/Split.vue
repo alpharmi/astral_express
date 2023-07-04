@@ -1,5 +1,5 @@
 <template>
-    <div class="split">
-        <div class="splitLine"></div>
-    </div>
+  <div class="split">
+    <div class="splitLine" />
+  </div>
 </template>
