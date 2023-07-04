@@ -1,0 +1,18 @@
+// https://eslint.vuejs.org/user-guide/
+{
+	"env":{
+		"browser": true
+	},
+	"files":{
+		"allow":[
+			"client/src/**/*"
+		]
+	},
+	"extends":[
+		"eslint:recommended",
+		"plugin:vue/vue3-essential"
+	],
+	"plugins": [
+		"vue"
+	]
+}
