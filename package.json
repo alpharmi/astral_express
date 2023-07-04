@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"nodemon dev/index.js \" \"cd client && vite\"",
+		"server": "node dev/index.js",
     "build": "cd client && vite build"
   },
   "dependencies": {
