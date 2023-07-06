@@ -18,13 +18,19 @@ export default {
 
 <template>
   <div class="bgcontainer w-fit flex flex-row h-14 gap-2">
-    <img :src="`/images/other/${value}.webp`" class="w-9">
+    <img
+      :src="`/images/other/${value}.webp`"
+      class="w-9"
+    >
     <div class="flex flex-col w-min text-sm items-start">
       <p class="text-title capitalize w-max pr-1">
         {{ langValue }}
       </p>
       <label class="checkbox">
-        <input :id="value" type="checkbox">
+        <input
+          :id="value"
+          type="checkbox"
+        >
         <span />
       </label>
     </div>

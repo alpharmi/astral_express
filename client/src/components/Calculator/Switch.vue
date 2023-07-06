@@ -18,7 +18,10 @@ export default {
 
 <template>
   <div class="bgcontainer w-fit flex flex-row h-14 gap-2">
-    <img :src="`/images/other/${value}.webp`" class="w-9">
+    <img
+      :src="`/images/other/${value}.webp`"
+      class="w-9"
+    >
     <div class="flex flex-col w-min text-sm capitalize">
       <p class="text-title w-max pr-1 ">
         {{ getLangValue(value) }}
@@ -28,7 +31,11 @@ export default {
           {{ getLangValue(option) }}
         </p>
         <label class="switch mt-0.5">
-          <input :id="value" type="checkbox" :checked="toggled">
+          <input
+            :id="value"
+            type="checkbox"
+            :checked="toggled"
+          >
           <span />
         </label>
       </div>

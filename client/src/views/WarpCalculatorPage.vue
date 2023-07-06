@@ -1,6 +1,6 @@
 <script setup>
-import Split from '../components/Split.vue'
-import Tooltip from '../components/Tooltip.vue'
+import Split from '../components/TheSplit.vue'
+import Tooltip from '../components/TheTooltip.vue'
 import Input from '../components/Calculator/Input.vue'
 import Toggle from '../components/Calculator/Toggle.vue'
 import Switch from '../components/Calculator/Switch.vue'
@@ -120,18 +120,50 @@ export default {
   <div class="grid grid-cols-2 md:flex md:gap-10 flex-wrap gap-5">
     <div class="flex flex-col gap-10">
       <div class="flex flex-row flex-wrap content-start gap-2">
-        <Input value="star_rail_special_pass" category="valuables" />
-        <Input value="stellar_jade" category="currency" />
-        <Input value="oneiric_shard" category="currency" />
-        <Input value="undying_embers" category="currency" />
-        <Input value="undying_starlight" category="currency" />
+        <Input
+          value="star_rail_special_pass"
+          category="valuables"
+        />
+        <Input
+          value="stellar_jade"
+          category="currency"
+        />
+        <Input
+          value="oneiric_shard"
+          category="currency"
+        />
+        <Input
+          value="undying_embers"
+          category="currency"
+        />
+        <Input
+          value="undying_starlight"
+          category="currency"
+        />
       </div>
       <div class="flex flex-row flex-wrap content-start gap-2">
-        <Input value="current_pity" category="wc.phrases" />
-        <Input value="days_until_pull" category="wc.phrases" />
-        <Toggle value="express_supply_pass" category="monetization" />
-        <Switch value="banner_type" option="light_cone" category="wc.phrases" />
-        <Switch value="refund_4_stars" toggled="true" category="wc.phrases" />
+        <Input
+          value="current_pity"
+          category="wc.phrases"
+        />
+        <Input
+          value="days_until_pull"
+          category="wc.phrases"
+        />
+        <Toggle
+          value="express_supply_pass"
+          category="monetization"
+        />
+        <Switch
+          value="banner_type"
+          option="light_cone"
+          category="wc.phrases"
+        />
+        <Switch
+          value="refund_4_stars"
+          toggled="true"
+          category="wc.phrases"
+        />
       </div>
     </div>
     <div class="flex flex-wrap gap-10">
@@ -168,18 +200,24 @@ export default {
             {{ $t('terms.softPity') }}: <span class="text-title">{{ soft_pity }}</span>
             <Tooltip
               v-if="banner_type"
-              :message="$t('wc.tooltipMessage')" icon="warning"
+              :message="$t('wc.tooltipMessage')"
+              icon="warning"
             />
           </p>
           <p>{{ $t('terms.hardPity') }} <span class="text-title">{{ hard_pity }}</span></p>
         </div>
         <div class="child:flex child:flex-row">
-          <i18n-t keypath="wc.5StarChance.content" tag="p" class="inline-image">
+          <i18n-t
+            keypath="wc.5StarChance.content"
+            tag="p"
+            class="inline-image"
+          >
             <template #image>
               <img src="/images/other/star.png">  {{ getLangValue(banner_type_name) }}
               <Tooltip
                 v-if="banner_type"
-                :message="$t('wc.tooltipMessage')" icon="warning"
+                :message="$t('wc.tooltipMessage')"
+                icon="warning"
               />
             </template>
             <template #message>
@@ -190,12 +228,17 @@ export default {
             </template>
           </i18n-t>
 
-          <i18n-t keypath="wc.5StarChance.content" tag="p" class="inline-image">
+          <i18n-t
+            keypath="wc.5StarChance.content"
+            tag="p"
+            class="inline-image"
+          >
             <template #image>
               <img src="/images/other/star.png">  {{ getLangValue(banner_type_name) }}
               <Tooltip
                 v-if="banner_type"
-                :message="$t('wc.tooltipMessage')" icon="warning"
+                :message="$t('wc.tooltipMessage')"
+                icon="warning"
               />
             </template>
             <template #message>

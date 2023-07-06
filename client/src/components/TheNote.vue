@@ -14,7 +14,10 @@ onMounted(() => {
 
 <template>
   <div class="bgcontainer bg-bg-dark-80 h-20 flex flex-row my-2 gap-2 p-2 pr-3 w-max whitespace-pre-line items-center">
-    <img class="h-full" src="/images/other/march_sticker.png">
+    <img
+      class="h-full"
+      src="/images/other/march_sticker.png"
+    >
 
     <p class="text-description">
       {{ `• ${messages.replace(",", "\n• ")}` }}

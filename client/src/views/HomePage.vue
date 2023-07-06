@@ -16,7 +16,10 @@ function redirect(route) {
         <h1 class="font-bold text-title pb-2">
           {{ $t('home.title') }}
         </h1>
-        <i18n-t keypath="home.newDesc.content" tag="p">
+        <i18n-t
+          keypath="home.newDesc.content"
+          tag="p"
+        >
           <span class="text-pink">{{ $t('home.newDesc.intro') }}</span>
         </i18n-t>
         <p v-if="false">
@@ -29,8 +32,14 @@ function redirect(route) {
         <p>
           {{ $t('wc.desc') }}
         </p>
-        <button class="flex button mt-3 gap-2 p-1 px-3 items-center" @click="redirect('warp/calculator')">
-          <img class="w-9" src="/images/other/oneiric_shard.webp">
+        <button
+          class="flex button mt-3 gap-2 p-1 px-3 items-center"
+          @click="redirect('warp/calculator')"
+        >
+          <img
+            class="w-9"
+            src="/images/other/oneiric_shard.webp"
+          >
           <p class="font-bold">
             {{ $t('wc.title') }} >
           </p>
@@ -40,8 +49,14 @@ function redirect(route) {
         <p>
           {{ $t('wh.desc') }}
         </p>
-        <button class="flex button mt-3 gap-2 p-1 px-3 items-center" @click="redirect('warp')">
-          <img class="w-9" src="/images/other/star_rail_pass.webp">
+        <button
+          class="flex button mt-3 gap-2 p-1 px-3 items-center"
+          @click="redirect('warp')"
+        >
+          <img
+            class="w-9"
+            src="/images/other/star_rail_pass.webp"
+          >
           <p class="font-bold">
             {{ $t('wh.title') }} >
           </p>

@@ -1,8 +1,5 @@
 <script>
-</script>
-
-<script setup>
-import Split from '../components/Split.vue'
+import Split from '../components/TheSplit.vue'
 
 export default {
   data() {

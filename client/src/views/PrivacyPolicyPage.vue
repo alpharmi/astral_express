@@ -1,5 +1,5 @@
 <script setup>
-import Split from '../components/Split.vue'
+import Split from '../components/TheSplit.vue'
 </script>
 
 <template>
@@ -19,7 +19,12 @@ import Split from '../components/Split.vue'
         <p class="text-title">
           • Visted astral-express.vercel.app URL
         </p>
-        <p>astral express uses <a href="https://vercel.com/docs/concepts/analytics/privacy-policy" class="link">vercel.com</a> analytics to collect pages viewed, operating system, browser, and visitor country.</p>
+        <p>
+          astral express uses <a
+            href="https://vercel.com/docs/concepts/analytics/privacy-policy"
+            class="link"
+          >vercel.com</a> analytics to collect pages viewed, operating system, browser, and visitor country.
+        </p>
       </div>
     </div>
   </div>
@@ -27,7 +32,12 @@ import Split from '../components/Split.vue'
     What does Astral Express DOESN'T collect
   </p>
   <div class="text-xl ml-10 flex flex-col gap-2">
-    <p>• Astral Express wont ever save passwords, emails, and HoYoverse related data (UIDs, usernames, etc). <br> Feel free to checkout the source code for yourself on <a href="https://github.com/alpharmi/astral_express" class="link">GitHub</a></p>
+    <p>
+      • Astral Express wont ever save passwords, emails, and HoYoverse related data (UIDs, usernames, etc). <br> Feel free to checkout the source code for yourself on <a
+        href="https://github.com/alpharmi/astral_express"
+        class="link"
+      >GitHub</a>
+    </p>
     <p>• Warp data is stored within the browser and isn't uploaded anywhere.</p>
   </div>
 </template>

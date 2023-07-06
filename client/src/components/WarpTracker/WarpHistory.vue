@@ -76,5 +76,9 @@ export default {
 </script>
 
 <template>
-  <Line width="full" :data="chartData" :options="chartOptions" />
+  <Line
+    width="full"
+    :data="chartData"
+    :options="chartOptions"
+  />
 </template>

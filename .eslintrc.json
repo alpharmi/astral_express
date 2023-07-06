@@ -12,7 +12,7 @@
     }
   ],
   "extends": [
-    "@antfu"
+    "plugin:vue/vue3-recommended"
   ],
   "plugins": [
     "vue"

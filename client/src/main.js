@@ -6,14 +6,14 @@ import App from './App.vue'
 import messages from './i18n.js'
 import './assets/tailwind.css'
 
-import Home from './views/Home.vue'
-import WarpTracker from './views/WarpTracker.vue'
-import WarpCalculator from './views/WarpCalculator.vue'
-import Global from './views/Global.vue'
-import Import from './views/Import.vue'
+import Home from './views/HomePage.vue'
+import WarpTracker from './views/WarpTrackerPage.vue'
+import WarpCalculator from './views/WarpCalculatorPage.vue'
+import Global from './views/GlobalPage.vue'
+import Import from './views/ImportPage.vue'
 
-// import Player from "./views/Player.vue"
-import PrivacyPolicy from './views/PrivacyPolicy.vue'
+// import Player from "./views/PlayerPage.vue"
+import PrivacyPolicy from './views/PrivacyPolicyPage.vue'
 
 const routes = [
   { path: '', component: Home },

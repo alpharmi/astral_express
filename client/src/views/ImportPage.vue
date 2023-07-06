@@ -1,14 +1,101 @@
+<template>
+  <div class="flex flex-col">
+    <h1 class="text-4xl pb-2 text-title font-bold">
+      {{ $t('import.title') }}
+    </h1>
+    <p
+      class="pb-2"
+      v-html="$t('import.desc')"
+    />
+    <Split />
+    <div class="flex flex-col gap-3">
+      <Instruction
+        number="1"
+        :description="$t('import.step1')"
+      />
+      <Instruction
+        number="2"
+        :description="$t('import.step2')"
+      />
+      <Instruction
+        number="3"
+        :description="$t('import.step3')"
+      />
+      <div class="ml-10 h-auto p-5 bg-container border-[1px] flex flex-row gap-3 items-center border-[#000000] border-opacity-50 rounded-xl">
+        <button
+          class="h-full"
+          @click="copytoclipboard"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            style=" width:1.5rem; height:1.5rem; fill:white;"
+            class=" svelte-1mzwbk9"
+          ><path
+            id="copySvg"
+            d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+          /></svg>
+        </button>
+        <p
+          id="copyCommand"
+          class="break-all"
+        >
+          Start-Process powershell -Verb runAs -ArgumentList '-NoExit -Command "Invoke-Expression <br> (New-Object Net.WebClient).DownloadString(\"https://raw.githubusercontent.com/alpharmi/astral_express/main/getwarps.ps1\")"'
+        </p>
+      </div>
+      <a
+        href="https://github.com/alpharmi/astral_express/blob/main/getwarps.ps1"
+        class="ml-10 link w-max"
+      >GitHub</a>
+      <Instruction
+        number="4"
+        :description="$t('import.step4.title')"
+      />
+      <input
+        id="warpURL"
+        type="text"
+        :placeholder="$t('import.step4.placeholder')"
+        class="ml-10 h-auto p-2 w-72 placeholder-neutral-500 bg-container border-[1px] border-[#000000] border-opacity-50 rounded-xl"
+      >
+      <button
+        class="buttonThin ml-10 w-72 h-12 text-center pb-3"
+        @click="importWarps"
+      >
+        {{ $t('import.button') }}
+      </button>
+    </div>
+  </div>
+  <div
+    v-if="importing"
+    class="fixed flex flex-col items-center justify-center rounded-md border-[1px] border-[#000000] bg-[#212136] top-[calc(50%-5rem)] left-1/2 -translate-x-1/2 w-80 h-24 px-2"
+  >
+    <p class="text-description">
+      {{ $t('import.importing.title') }}
+    </p>
+    <p class="text-xl">
+      {{ $t('import.importing.warps') }}: <span class="text-title">{{ totalWarps }}</span>
+    </p>
+    <p class="text-description">
+      {{ $t('import.importing.hint') }}
+    </p>
+  </div>
+</template>
+
 <script>
 import * as vueRouter from 'vue-router'
 import rarities from '../data/rarities.json'
 import standardWarps from '../data/standardWarps.json'
-</script>
-
-<script setup>
-import Split from '../components/Split.vue'
-import Instruction from '../components/WarpTracker/Instruction.vue'
+import Split from '../components/TheSplit.vue'
+import Instruction from '../components/WarpTracker/TheInstruction.vue'
 
 export default {
+	components:{
+		Split,
+		Instruction
+	},
+	setup(){
+		const router = vueRouter.useRouter()
+		return { router }
+	},
   data() {
     return {
       production: import.meta.env.PROD,
@@ -176,45 +263,4 @@ export default {
   },
 }
 
-const router = vueRouter.useRouter()
 </script>
-
-<template>
-  <div class="flex flex-col">
-    <h1 class="text-4xl pb-2 text-title font-bold">
-      {{ $t('import.title') }}
-    </h1>
-    <p class="pb-2" v-html="$t('import.desc')" />
-    <Split />
-    <div class="flex flex-col gap-3">
-      <Instruction number="1" :description="$t('import.step1')" />
-      <Instruction number="2" :description="$t('import.step2')" />
-      <Instruction number="3" :description="$t('import.step3')" />
-      <div class="ml-10 h-auto p-5 bg-container border-[1px] flex flex-row gap-3 items-center border-[#000000] border-opacity-50 rounded-xl">
-        <button class="h-full" @click="copytoclipboard">
-          <svg viewBox="0 0 24 24" style=" width:1.5rem; height:1.5rem; fill:white;" class=" svelte-1mzwbk9"><path id="copySvg" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg>
-        </button>
-        <p id="copyCommand" class="break-all">
-          Start-Process powershell -Verb runAs -ArgumentList '-NoExit -Command "Invoke-Expression <br> (New-Object Net.WebClient).DownloadString(\"https://raw.githubusercontent.com/alpharmi/astral_express/main/getwarps.ps1\")"'
-        </p>
-      </div>
-      <a href="https://github.com/alpharmi/astral_express/blob/main/getwarps.ps1" class="ml-10 link w-max">GitHub</a>
-      <Instruction number="4" :description="$t('import.step4.title')" />
-      <input id="warpURL" type="text" :placeholder="$t('import.step4.placeholder')" class="ml-10 h-auto p-2 w-72 placeholder-neutral-500 bg-container border-[1px] border-[#000000] border-opacity-50 rounded-xl">
-      <button class="buttonThin ml-10 w-72 h-12 text-center pb-3" @click="importWarps">
-        {{ $t('import.button') }}
-      </button>
-    </div>
-  </div>
-  <div v-if="importing" class="fixed flex flex-col items-center justify-center rounded-md border-[1px] border-[#000000] bg-[#212136] top-[calc(50%-5rem)] left-1/2 -translate-x-1/2 w-80 h-24 px-2">
-    <p class="text-description">
-      {{ $t('import.importing.title') }}
-    </p>
-    <p class="text-xl">
-      {{ $t('import.importing.warps') }}: <span class="text-title">{{ totalWarps }}</span>
-    </p>
-    <p class="text-description">
-      {{ $t('import.importing.hint') }}
-    </p>
-  </div>
-</template>
