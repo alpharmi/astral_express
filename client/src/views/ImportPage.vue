@@ -87,6 +87,7 @@ import standardWarps from '../data/standardWarps.json'
 import Split from '../components/TheSplit.vue'
 import Instruction from '../components/WarpTracker/TheInstruction.vue'
 
+// console.log('import.meta.env.PROD', import.meta.env.PROD)
 export default {
 	components:{
 		Split,
@@ -116,7 +117,7 @@ export default {
     },
     async getWarps(authkey, region, id, banner) {
       // https://astral-express.vercel.app/api/importWarps? http://localhost:3000/api/warps/importWarps?
-      const url = this.production ? 'https://astral-express.vercel.app/api/importWarps?' : 'http://localhost:3000/api/importWarps?'
+      const url = this.production ? import.meta.env.VITE_API_URL : 'http://localhost:3000/api/importWarps?'
 
       const response = await fetch(url + new URLSearchParams({
         authkey,
