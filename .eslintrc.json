@@ -1,0 +1,20 @@
+// https://eslint.vuejs.org/user-guide/
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "overrides": [
+    {
+      "files": [
+        "client/src/**/*.{js,vue}"
+      ]
+    }
+  ],
+  "extends": [
+    "plugin:vue/vue3-recommended"
+  ],
+  "plugins": [
+    "vue"
+  ]
+}

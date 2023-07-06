@@ -2,13 +2,21 @@
   "name": "astral_express",
   "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alpharmi/astral_express"
+  },
   "scripts": {
-    "dev": "concurrently \"nodemon dev/index.js \" \"cd client && vite\"", 
-    "build": "cd client && vite build"
+    "dev": "concurrently \"nodemon dev/index.js \" \"cd client && vite\"",
+    "server": "node dev/index.js",
+    "build": "cd client && vite build",
+    "lint": "eslint . --ignore-path .gitignore",
+    "lint:fix": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
     "autoprefixer": "^10.4.13",
+    "axios": "^1.4.0",
     "chart.js": "^4.3.0",
     "concurrently": "^7.6.0",
     "cors": "^2.8.5",
@@ -26,11 +34,10 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.39.7",
     "@vitejs/plugin-vue": "^4.0.0",
+    "eslint": "^8.44.0",
+    "eslint-plugin-vue": "^9.15.1",
     "vite": "^4.1.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alpharmi/astral_express"
   }
 }
