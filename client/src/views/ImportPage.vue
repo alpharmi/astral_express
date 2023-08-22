@@ -39,7 +39,7 @@
           id="copyCommand"
           class="break-all"
         >
-          Start-Process powershell -Verb runAs -ArgumentList '-NoExit -Command "Invoke-Expression <br> (New-Object Net.WebClient).DownloadString(\"https://raw.githubusercontent.com/alpharmi/astral_express/main/getwarps.ps1\")"'
+          {{ commandContent }}
         </p>
       </div>
       <a
@@ -82,10 +82,10 @@
 
 <script>
 import * as vueRouter from 'vue-router'
-import rarities from '../data/rarities.json'
-import standardWarps from '../data/standardWarps.json'
 import Split from '../components/TheSplit.vue'
 import Instruction from '../components/WarpTracker/TheInstruction.vue'
+import rarities from '../data/rarities.json'
+import standardWarps from '../data/standardWarps.json'
 
 // console.log('import.meta.env.PROD', import.meta.env.PROD)
 export default {
@@ -104,6 +104,11 @@ export default {
       totalWarps: 0,
     }
   },
+	computed:{
+		commandContent(){
+			return `Start-Process powershell -Verb runAs -ArgumentList '-NoExit -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString(\\"${import.meta.env.VITE_COMMAND_URL}\\")"'`
+		}
+	},
   methods: {
     copytoclipboard() {
       const copyCommand = document.getElementById('copyCommand')
@@ -117,7 +122,7 @@ export default {
     },
     async getWarps(authkey, region, id, banner) {
       // https://astral-express.vercel.app/api/importWarps? http://localhost:3000/api/warps/importWarps?
-      const url = this.production ? import.meta.env.VITE_API_URL : 'http://localhost:3000/api/importWarps?'
+      const url = this.production ? import.meta.env.VITE_DEPLOY_URL + 'api/importWarps?' : 'http://localhost:3000/api/importWarps?'
 
       const response = await fetch(url + new URLSearchParams({
         authkey,
@@ -261,7 +266,7 @@ export default {
         }
       }
     },
-  },
+  }
 }
 
 </script>
