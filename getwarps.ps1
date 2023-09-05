@@ -22,9 +22,9 @@ for ($i = $logContent.Length - 1; $i -ge 0; $i--) {
 if ($gamePath -ne "") {
     #Find Gacha Url
     Write-Output "Finding Gacha Url..."
-    Copy-Item -Path "$gamePath/webCaches/Cache/Cache_Data/data_2" -Destination "$gamePath/webCaches/Cache/Cache_Data/data_2_copy"
-    $cacheData = Get-Content -Encoding UTF8 -Raw "$gamePath/webCaches/Cache/Cache_Data/data_2_copy"
-    Remove-Item -Path "$gamePath/webCaches/Cache/Cache_Data/data_2_copy"
+    Copy-Item -Path "$gamePath/webCaches/2.14.0.0/Cache/Cache_Data/data_2" -Destination "$gamePath/webCaches/2.14.0.0/Cache/Cache_Data/data_2_copy"
+    $cacheData = Get-Content -Encoding UTF8 -Raw "$gamePath/webCaches/2.14.0.0/Cache/Cache_Data/data_2_copy"
+    Remove-Item -Path "$gamePath/webCaches/2.14.0.0/Cache/Cache_Data/data_2_copy"
     $cacheDataLines = $cacheData -split '1/0/'
     $foundUrl = "false"
 
