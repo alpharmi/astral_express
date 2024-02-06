@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Tahoma;
+    src: url("Tahoma_Regular.ttf");
+}
+
+@font-face {
+    font-family: Tahoma;
+    src: url("Tahoma_Bold.ttf");
+    font-weight: bold
+}
+
+@font-face {
+    font-family: Honkai;
+    src: url("Honkai_Star_Rail.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg: #1a1d23;
+    --title: #d3bc8e;
+}
+
+#app {
+    display: flex;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: var(--bg);
+    font-family: 'Tahoma', helvetica, sans-serif;
+    cursor: url("/images/other/cursor.png") 4 2, auto;
+    color: #edf2f7;
+}
+
+.container {
+    background-color: hsla(218, 12%, 18%, 0.75);
+    backdrop-filter: blur(100px);
+    border-radius: 1rem;
+    border-image: url("/images/other/containerDetail.png");
+    border-image-slice: 50 50 50 50;
+    border-width: 1rem;
+}
+
+.button {
+    background-image: url("/images/other/button.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
